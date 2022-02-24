@@ -1,5 +1,1 @@
-# jxctno.github.io
-A text-based chat
-*under development*
-https://jxctno.github.io/
-
+# Website for Blue Horizon's [Image Generator](https://github.dev/blue-horizons/image-generator)
