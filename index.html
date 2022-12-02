@@ -1,874 +1,247 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Hawsie NFTs</title>
-        <style>* {
-            font-family: 'Courier New', Courier, monospace;
+<html lang="en">
+
+
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta charset="utf-8">
+    <title>Advent Calendar</title>
+    <style type="text/css">
+        @font-face {
+            font-family: candycane;
+            src: url("./media/candycane.ttf");
+        }
+
+        * {
+            font-family: candycane;
+        }
+
+        body {
+            background-color: #094209;
+            color: #ffffff;
             align-items: center;
-            text-align: center;
-            background-color: rgb(23, 75, 134);
-            color: whitesmoke;
-            box-sizing:border-box
+
         }
-        .hawsieIMAGE{
-            pointer-events: none;
-            width: 20;
-            height: 20;
+
+        #closeButton {
+            align-items: right;
+            color: #ffffff;
+            background-color: #590000;
+            width: 50px;
+            height: 50px;
+            font-size: 40px;
         }
-        .header-banner{
-            font-style: italic;
-            font-size: 14px;
-            color: #000;
-            line-height: 100%;
-            padding-top: 6px;
-            background: rgb(0, 255, 0);
-            text-align: center;
-            width: 100%
-        }
-        h1 {
-            font-weight: bold;
-        }
-        
-        footer {
-            text-align:center
-        }
-        
-        
-        /* Slideshow container */
-        .slideshow-container {
-            max-width: 1000px;
-            max-height: 1000px;
-            aspect-ratio: 1/1;
-            position: relative;
-            margin: auto;
-        }
-        
-        /* Hide the images by default */
-        .mySlides {
-            display: none;
-        }
-        
-        /* Next & previous buttons */
-        .prev, .next {
-            cursor: pointer;
-            position: absolute;
-            top: 50%;
-            width: auto;
-            margin-top: -22px;
-            padding: 16px;
-            color: white;
-            font-weight: bold;
-            font-size: 18px;
-            transition: 0.6s ease;
-            border-radius: 0 3px 3px 0;
-            user-select: none;
-        }
-        
-        /* Position the "next button" to the right */
-        .next {
-            right: 0;
-            border-radius: 3px 0 0 3px;
-        }
-        
-        /* On hover, add a black background color with a little bit see-through */
-        .prev:hover, .next:hover {
-            background-color: rgba(0,0,0,0.8);
-        }
-        
-        /* Caption text */
-        .text {
-            color: #f2f2f2;
-            font-size: 15px;
-            padding: 8px 12px;
-            position: absolute;
-            bottom: 8px;
-            width: 100%;
-            text-align: center;
-            background-color: black;
-        }
-        
-        /* Number text (1/3 etc) */
-        .numbertext {
-            color: #f2f2f2;
-            font-size: 12px;
-            padding: 8px 12px;
+
+        .calendar {
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 0px auto;
             position: absolute;
             top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
         }
-        </style>
-    </head>
-    <body>
-        <div class="header-banner">~ IMAGES ON THIS SITE ARE TEMPORARY DEMOS. THESE ARE NOT NFTS, AND HAVE NO MONETRY VALUE ~</div>
-        <div id="Text">
-            <h1>Hawsie NFT Project</h1>
-            <p1>
-                This is an NFT Project created by Joshua Cotugno.
-                <br>All of the Images on this page were generated with a python script that Ive been generating over the course of the last few Weeks 
-                <italic>(as of 27/02/2022)</italic>
-            </p1>
+
+        .calendar td {
+            border-color: black;
+            border-style: solid;
+            border-width: 0px;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            overflow: hidden;
+            padding: 10px 5px;
+            word-break: normal;
+        }
+
+        .calendar .door {
+            border-color: inherit;
+            text-align: left;
+            vertical-align: top;
+            height: 20%;
+            font-size: 75px;
+            text-align: center;
+        }
+
+        button {
+            border: 0px;
+            border-radius: 10%;
+            font-size: 70%;
+            background-color: #ffffff00;
+            color: red;
+            text-align: center;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+        }
+
+        #container {
+            position: relative;
+        }
+
+        #message {
+            position: absolute;
+            top: 0px;
+            visibility: hidden;
+            max-width: 60%;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        #message #image {
+            width:400px;
+            background-color: #590000;
+            padding: 10px 10px 10px 10px;
+        }
+
+        .doorButton {
+            vertical-align: middle;
+            width: 75%;
+            height: 75%;
+            border-top: 10px;
+            border-bottom: 10px;
+        }
+
+        #door24 {
+            font-size: 20px;
+        }
+
+        .door {
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            padding: 10px 10px 10px 10px;
+        }
+
+        .closed {
+            background-image: url("./media/door.png");
+        }
+
+        .opened {
+            background-image: url("./media/opendoor.png");
+        }
+
+        .yellowbg {
+            background-color: #face00;
+        }
+
+        .bluebg {
+            background-color: #1269ff;
+        }
+
+        .door:hover {
+            background-image: url("./media/halfopendoor.png");
+        }
+
+        #todaydate {
+            font-family: inherit;
+            font-size: xx-large;
+            text-align: center;
+
+        }
+    </style>
+    <script type="text/javascript" src="scripts.js"></script>
+</head>
+
+<body onload="today()">
+    <div id="container">
+        <div id="calendar" style="visibility: visible;">
+            <table class="calendar">
+                <tbody>
+                    <tr>
+                        <td colspan="6" id="todaydate"></td>
+                    </tr>
+                    <tr>
+                        <td class="door yellowbg closed"><button title="calendar" class="doorButton" id="door1"
+                                onclick="openDay(1)">1</button></td>
+                        <td class="door bluebg closed"><button title="calendar" class="doorButton" id="door2"
+                                onclick="openDay(2)">2</button></td>
+                        <td class="door yellowbg closed"><button title="calendar" class="doorButton" id="door3"
+                                onclick="openDay(3)">3</button></td>
+                        <td class="door bluebg closed"><button title="calendar" class="doorButton" id="door4"
+                                onclick="openDay(4)">4</button></td>
+                        <td class="door yellowbg closed"><button title="calendar" class="doorButton" id="door5"
+                                onclick="openDay(5)">5</button></td>
+                        <td class="door bluebg closed"><button title="calendar" class="doorButton" id="door6"
+                                onclick="openDay(6)">6</button></td>
+                    </tr>
+                    <tr>
+                        <td class="door bluebg closed"><button title="calendar" class="doorButton" id="door7"
+                                onclick="openDay(7)">7</button></td>
+                        <td class="door yellowbg closed"><button title="calendar" class="doorButton" id="door8"
+                                onclick="openDay(8)">8</button></td>
+                        <td class="door bluebg closed"><button title="calendar" class="doorButton" id="door9"
+                                onclick="openDay(9)">9</button></td>
+                        <td class="door yellowbg closed"><button title="calendar" class="doorButton" id="door10"
+                                onclick="openDay(10)">10</button></td>
+                        <td class="door bluebg closed"><button title="calendar" class="doorButton" id="door11"
+                                onclick="openDay(11)">11</button></td>
+                        <td class="door yellowbg closed"><button title="calendar" class="doorButton" id="door12"
+                                onclick="openDay(12)">12</button></td>
+                    </tr>
+                    <tr>
+                        <td class="door yellowbg closed"><button title="calendar" class="doorButton" id="door13"
+                                onclick="openDay(13)">13</button></td>
+                        <td class="door bluebg closed"><button title="calendar" class="doorButton" id="door14"
+                                onclick="openDay(14)">14</button></td>
+                        <td class="door yellowbg closed"><button title="calendar" class="doorButton" id="door15"
+                                onclick="openDay(15)">15</button></td>
+                        <td class="door bluebg closed"><button title="calendar" class="doorButton" id="door16"
+                                onclick="openDay(16)">16</button></td>
+                        <td class="door yellowbg closed"><button title="calendar" class="doorButton" id="door17"
+                                onclick="openDay(17)">17</button></td>
+                        <td class="door bluebg closed"><button title="calendar" class="doorButton" id="door18"
+                                onclick="openDay(18)">18</button></td>
+                    </tr>
+                    <tr>
+                        <td class="door bluebg closed"><button title="calendar" class="doorButton" id="door19"
+                                onclick="openDay(19)">19</button></td>
+                        <td class="door yellowbg closed"><button title="calendar" class="doorButton" id="door20"
+                                onclick="openDay(20)">20</button></td>
+                        <td class="door bluebg closed"><button title="calendar" class="doorButton" id="door21"
+                                onclick="openDay(21)">21</button></td>
+                        <td class="door yellowbg closed"><button title="calendar" class="doorButton" id="door22"
+                                onclick="openDay(22)">22</button></td>
+                        <td class="door bluebg closed"><button title="calendar" class="doorButton" id="door23"
+                                onclick="openDay(23)">23</button></td>
+                        <td class="door yellowbg closed"><button title="calendar" class="doorButton" id="door24"
+                                onclick="openDay(24)">CHRI<br>STMAS<br>EVE!</button></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-        <div id="Images">
-            <!-- Slideshow container -->
-            <div class="slideshow-container">
-                <!-- Full-width images with number and caption text 
-                    <d iv class="mySlides fade">
-                    <div class="numbertext">1 / 3</div>
-                    <i mg src="img1.jpg" style="width:100%">
-                    <div class="text">Caption Text</div>
-                    </div>
-                    
-                    <di v class="mySlides fade">
-                    <div class="numbertext">2 / 3</div>
-                    <i mg src="img2.jpg" style="width:100%">
-                    <div class="text">Caption Two</div>
-                    </div>
-                    
-                    < div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    < img src="img3.jpg" style="width:100%">
-                    <div class="text">Caption Three</div>
-                    </div>-->
-                <div class="mySlides fade">
-                    <div class="numbertext">1 / 100</div>
-                    <img src="https://i.ibb.co/mD1zfsq/hawsie-000.png" width="100%" height ="100%" alt="hawsie-000" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">2 / 100</div>
-                    <img src="https://i.ibb.co/302fRyy/hawsie-001.png" width="100%" height ="100%" alt="hawsie-001" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">3 / 100</div>
-                    <img src="https://i.ibb.co/VL3VN4K/hawsie-002.png" width="100%" height ="100%" alt="hawsie-002" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">4 / 100</div>
-                    <img src="https://i.ibb.co/vqMcGkT/hawsie-003.png" width="100%" height ="100%" alt="hawsie-003" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">5 / 100</div>
-                    <img src="https://i.ibb.co/Dzz6WxV/hawsie-004.png" width="100%" height ="100%" alt="hawsie-004" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">6 / 100</div>
-                    <img src="https://i.ibb.co/zfk1GfK/hawsie-005.png" width="100%" height ="100%" alt="hawsie-005" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">7 / 100</div>
-                    <img src="https://i.ibb.co/mcyW7wH/hawsie-006.png" width="100%" height ="100%" alt="hawsie-006" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">8 / 100</div>
-                    <img src="https://i.ibb.co/m8XdQGm/hawsie-007.png" width="100%" height ="100%" alt="hawsie-007" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">9 / 100</div>
-                    <img src="https://i.ibb.co/chwQQKp/hawsie-008.png" width="100%" height ="100%" alt="hawsie-008" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">10 / 100</div>
-                    <img src="https://i.ibb.co/HDFk5x4/hawsie-009.png" width="100%" height ="100%" alt="hawsie-009" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">11 / 100</div>
-                    <img src="https://i.ibb.co/8gbznM3/hawsie-010.png" width="100%" height ="100%" alt="hawsie-010" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">12 / 100</div>
-                    <img src="https://i.ibb.co/zrFqy0y/hawsie-011.png" width="100%" height ="100%" alt="hawsie-011" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">13 / 100</div>
-                    <img src="https://i.ibb.co/yk7RMGF/hawsie-012.png" width="100%" height ="100%" alt="hawsie-012" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">14 / 100</div>
-                    <img src="https://i.ibb.co/3Mv6xKF/hawsie-013.png" width="100%" height ="100%" alt="hawsie-013" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/HP9LHDC/hawsie-014.png" width="100%" height ="100%" alt="hawsie-014" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/ZWJ9s92/hawsie-015.png" width="100%" height ="100%" alt="hawsie-015" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/R3MqDHh/hawsie-016.png" width="100%" height ="100%" alt="hawsie-016" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/sgQk2HK/hawsie-017.png" width="100%" height ="100%" alt="hawsie-017" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/ZLXmsTj/hawsie-018.png" width="100%" height ="100%" alt="hawsie-018" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/Y7f2BZ3/hawsie-019.png" width="100%" height ="100%" alt="hawsie-019" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/S3tm64K/hawsie-020.png" width="100%" height ="100%" alt="hawsie-020" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/3C4CysC/hawsie-021.png" width="100%" height ="100%" alt="hawsie-021" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/375kxYb/hawsie-022.png" width="100%" height ="100%" alt="hawsie-022" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/WFp8KQM/hawsie-023.png" width="100%" height ="100%" alt="hawsie-023" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/3v72Y7L/hawsie-024.png" width="100%" height ="100%" alt="hawsie-024" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/5LN4FWw/hawsie-025.png" width="100%" height ="100%" alt="hawsie-025" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/c243CZC/hawsie-026.png" width="100%" height ="100%" alt="hawsie-026" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/NZVxD88/hawsie-027.png" width="100%" height ="100%" alt="hawsie-027" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/dbVfPTs/hawsie-028.png" width="100%" height ="100%" alt="hawsie-028" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/3MWnGYB/hawsie-029.png" width="100%" height ="100%" alt="hawsie-029" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/R7SpRsv/hawsie-030.png" width="100%" height ="100%" alt="hawsie-030" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/cyj2V4R/hawsie-031.png" width="100%" height ="100%" alt="hawsie-031" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/qN8sQgf/hawsie-032.png" width="100%" height ="100%" alt="hawsie-032" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/B2G5tvq/hawsie-033.png" width="100%" height ="100%" alt="hawsie-033" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/VSv3hPm/hawsie-034.png" width="100%" height ="100%" alt="hawsie-034" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/4fSjVHS/hawsie-035.png" width="100%" height ="100%" alt="hawsie-035" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/1mWS2qy/hawsie-036.png" width="100%" height ="100%" alt="hawsie-036" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/gtRMfR3/hawsie-037.png" width="100%" height ="100%" alt="hawsie-037" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/tKKsJ1Q/hawsie-038.png" width="100%" height ="100%" alt="hawsie-038" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/m0KDph3/hawsie-039.png" width="100%" height ="100%" alt="hawsie-039" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/7vyqcZn/hawsie-040.png" width="100%" height ="100%" alt="hawsie-040" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/R0Br3Fs/hawsie-041.png" width="100%" height ="100%" alt="hawsie-041" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/MfFnJFd/hawsie-042.png" width="100%" height ="100%" alt="hawsie-042" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/F7jxT3M/hawsie-043.png" width="100%" height ="100%" alt="hawsie-043" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/f9tB5mC/hawsie-044.png" width="100%" height ="100%" alt="hawsie-044" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/Mf6L7MY/hawsie-045.png" width="100%" height ="100%" alt="hawsie-045" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/HC1pfsQ/hawsie-046.png" width="100%" height ="100%" alt="hawsie-046" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/gMgMsxW/hawsie-047.png" width="100%" height ="100%" alt="hawsie-047" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/2dkhzRX/hawsie-048.png" width="100%" height ="100%" alt="hawsie-048" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/J5yzdSS/hawsie-049.png" width="100%" height ="100%" alt="hawsie-049" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/cvGRQtq/hawsie-050.png" width="100%" height ="100%" alt="hawsie-050" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/sqMj2x6/hawsie-051.png" width="100%" height ="100%" alt="hawsie-051" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/4KGsm8G/hawsie-052.png" width="100%" height ="100%" alt="hawsie-052" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/0XXWbyG/hawsie-053.png" width="100%" height ="100%" alt="hawsie-053" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/z2mMLH2/hawsie-054.png" width="100%" height ="100%" alt="hawsie-054" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/L9zFVwg/hawsie-055.png" width="100%" height ="100%" alt="hawsie-055" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/mzBKv3Q/hawsie-056.png" width="100%" height ="100%" alt="hawsie-056" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/zS1sdRM/hawsie-057.png" width="100%" height ="100%" alt="hawsie-057" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/wRL1BdK/hawsie-058.png" width="100%" height ="100%" alt="hawsie-058" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/W319t2Q/hawsie-059.png" width="100%" height ="100%" alt="hawsie-059" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/P6t4ZwQ/hawsie-060.png" width="100%" height ="100%" alt="hawsie-060" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/B6BZDm9/hawsie-061.png" width="100%" height ="100%" alt="hawsie-061" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/D4hWnTd/hawsie-062.png" width="100%" height ="100%" alt="hawsie-062" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/VmR1YpS/hawsie-063.png" width="100%" height ="100%" alt="hawsie-063" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/HgJywbw/hawsie-064.png" width="100%" height ="100%" alt="hawsie-064" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/2NBn5QZ/hawsie-065.png" width="100%" height ="100%" alt="hawsie-065" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/d4c4x8F/hawsie-066.png" width="100%" height ="100%" alt="hawsie-066" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/DQH2jCb/hawsie-067.png" width="100%" height ="100%" alt="hawsie-067" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/2yNtJxp/hawsie-068.png" width="100%" height ="100%" alt="hawsie-068" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/rtBr0T3/hawsie-069.png" width="100%" height ="100%" alt="hawsie-069" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/0BVB3x8/hawsie-070.png" width="100%" height ="100%" alt="hawsie-070" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/F5JcXXZ/hawsie-071.png" width="100%" height ="100%" alt="hawsie-071" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/Qcnx21G/hawsie-072.png" width="100%" height ="100%" alt="hawsie-072" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/BwN5S6K/hawsie-073.png" width="100%" height ="100%" alt="hawsie-073" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/Nsf3Hbv/hawsie-074.png" width="100%" height ="100%" alt="hawsie-074" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/JFSDrbG/hawsie-075.png" width="100%" height ="100%" alt="hawsie-075" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/8xJZRNW/hawsie-076.png" width="100%" height ="100%" alt="hawsie-076" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/KbkWyFX/hawsie-077.png" width="100%" height ="100%" alt="hawsie-077" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/MGdCLJp/hawsie-078.png" width="100%" height ="100%" alt="hawsie-078" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/F4B3SMy/hawsie-079.png" width="100%" height ="100%" alt="hawsie-079" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/fNj0t9M/hawsie-080.png" width="100%" height ="100%" alt="hawsie-080" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/w7Mvkkj/hawsie-081.png" width="100%" height ="100%" alt="hawsie-081" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/Rv6WnvT/hawsie-082.png" width="100%" height ="100%" alt="hawsie-082" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/yN53rqL/hawsie-083.png" width="100%" height ="100%" alt="hawsie-083" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/bzCnhH8/hawsie-084.png" width="100%" height ="100%" alt="hawsie-084" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/cFmYrsy/hawsie-085.png" width="100%" height ="100%" alt="hawsie-085" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/grzYZ1v/hawsie-086.png" width="100%" height ="100%" alt="hawsie-086" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/YbYmpPm/hawsie-087.png" width="100%" height ="100%" alt="hawsie-087" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/kDZ7qP5/hawsie-088.png" width="100%" height ="100%" alt="hawsie-088" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/jwYnHps/hawsie-089.png" width="100%" height ="100%" alt="hawsie-089" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/0XncZtc/hawsie-090.png" width="100%" height ="100%" alt="hawsie-090" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/XkbRQxV/hawsie-091.png" width="100%" height ="100%" alt="hawsie-091" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/jfr9xYz/hawsie-092.png" width="100%" height ="100%" alt="hawsie-092" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/b3PYtW9/hawsie-093.png" width="100%" height ="100%" alt="hawsie-093" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/myxCSgZ/hawsie-094.png" width="100%" height ="100%" alt="hawsie-094" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/6XHwQ5T/hawsie-095.png" width="100%" height ="100%" alt="hawsie-095" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/2jgczrx/hawsie-096.png" width="100%" height ="100%" alt="hawsie-096" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/HX49LKf/hawsie-097.png" width="100%" height ="100%" alt="hawsie-097" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/SJYPmB1/hawsie-098.png" width="100%" height ="100%" alt="hawsie-098" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">x / 100</div>
-                    <img src="https://i.ibb.co/85JqCyp/hawsie-099.png" width="100%" height ="100%" alt="hawsie-099" style="width:100%">
-                    <div class="text">
-                        <!-- HAWSIE NUM -->
-                    </div>
-                </div>
-                <!-- Next and previous buttons -->
-                <align-items:left><a class="prev" onclick="plusSlides(-1)">&#10094; </a></align-items:left>
-                <align-items:right><a class="next" onclick="plusSlides(1)">&#10095;</a></align-items:right>
-            </div>
+        <div id="message">
+            
+            
+            
+            
+
+            <table>
+                <colgroup>
+                <col style="width: 360px">
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <td align="right"><button id="closeButton" onclick="closemessage()">×</button></td>
+                  </tr>
+                  <tr>
+                    <td><h1 id="messageHeader"></h1></td>
+                  </tr>
+                  <tr>
+                    <td><img id="message_image" src=""><br></td>
+                  </tr>
+                  <tr>
+                    <td><p1 id="messageText"></p1></td>
+                  </tr>
+                </tbody>
+                </table>
         </div>
-        <p2>Click <a href="images.html">HERE</a> for all the images in an order.</p2>
-        <footer >
-            © JOSHUA COTUGNO 2022
-            <br>
-            <a href="https://www.instagram.com/tilt3d_head/"><i class="fa-brands fa-instagram"></i></a>
-        </footer>
-        <script>
-            var slideIndex = 1;
-            showSlides(slideIndex);
-            
-            // Next/previous controls
-            function plusSlides(n) {
-                showSlides(slideIndex += n);
-            }
-            
-            // Thumbnail image controls
-            function currentSlide(n) {
-                showSlides(slideIndex = n);
-            }
-            
-            function showSlides(n) {
-                var i;
-                var slides = document.getElementsByClassName("mySlides");
-                var dots = document.getElementsByClassName("dot");
-                if (n > slides.length) {slideIndex = 1}
-                if (n < 1) {slideIndex = slides.length}
-                for (i = 0; i < slides.length; i++) {
-                    slides[i].style.display = "none";
-                }
-                for (i = 0; i < dots.length; i++) {
-                    dots[i].className = dots[i].className.replace(" active", "");
-                }
-                slides[slideIndex-1].style.display = "block";
-                dots[slideIndex-1].className += " active";
-            }
-        </script>
-    </body>
+    </div>
+    <div id="hidden" hidden>
+        <audio id="audio" src="./media/doorcreak.wav"></audio>
+    </div>
+
+</body>
+
 </html>
