@@ -33,12 +33,12 @@ const messageText = ["One of the first images I have...<br>There will be more- t
 
 function opendoor(doorNumber) {
     document.getElementById(`door${doorNumber}`).classList.replace("closed","open")
-    document.getElementById(`door${doorNumber}`).style.backgroundImage = "url('./media/opendoor.png')"
+    document.getElementById(`door${doorNumber}`).style.backgroundImage = "url('https://raw.githubusercontent.com/jxctno/jxctno.github.io/main/media/opendoor.png')"
     play()
     setTimeout(10)
     document.getElementById("message").style.visibility = "visible"; // Open message
     document.getElementById("calendar").style.visibility = "hidden";
-    let image = `./media/img (${doorNumber}).jpg`
+    let image = `https://raw.githubusercontent.com/jxctno/jxctno.github.io/main/media/img (${doorNumber}).jpg`
     document.getElementById("message_image").setAttribute("src", image);
     document.getElementById("messageHeader").innerHTML = messageHeaders[doorNumber - 1]
 
