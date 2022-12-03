@@ -2,9 +2,9 @@ const today_date = new Date();
 
 //          DAY | 1
 const messageHeaders = ["December 1<sup>st</sup>", "December 2<sup>nd</sup>","December 3<sup>rd</sup>"]
-const messageText = ["One of the first images I have...<br>There will be more- though some you will find embarrasing lol", 
-                    "I dont have a correct date for this one...<br>I think its us on the way home from Cambridge.<br>I just think its a really cool photo lol 👌",
-                "Brighton,2nd August- a nice beach view to soothe your soul today."]
+const messageText = ["One of the first images I have...<br>There will be more- though some you will find embarrasing lol", /*0*/
+                  /*1 */  "I dont have a correct date for this one...<br>I think its us on the way home from Cambridge.<br>I just think its a really cool photo lol 👌",
+                /*2*/ "Brighton,2nd August- a nice beach view to soothe your soul today."]
 
 
 
