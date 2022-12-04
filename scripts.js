@@ -1,12 +1,13 @@
 const today_date = new Date();
 
 //          DAY | 1
-const messageHeaders = ["December 1<sup>st</sup>", "December 2<sup>nd</sup>","December 3<sup>rd</sup>","December 4<sup>th</sup>","December 5<sup>th</sup>"]
+const messageHeaders = ["December 1<sup>st</sup>", "December 2<sup>nd</sup>","December 3<sup>rd</sup>","December 4<sup>th</sup>","December 5<sup>th</sup> 🕷️","December 5<sup>th</sup>"]
 const messageText = ["One of the first images I have...<br>There will be more- though some you will find embarrasing lol", /*0*/
                   /*1 */  "I dont have a correct date for this one...<br>I think its us on the way home from Cambridge.<br>I just think its a really cool photo lol 👌",
                 /*2*/ "Brighton, 2nd August- a nice beach view to soothe your soul today.",
             /*3*/ "On the way to (<i>from</i>?) Beach Bunny. Definately one of the best Live Music experiences of my life.<br>Btw, you can save all these images!",
-        /*4*/ "Okay, Please don't hate me for this.... I just found it so funny- it <i>had</i> to be here...<br>Love u bro 😅"]
+        /*4*/ "Okay, Please don't hate me for this.... I just found it so funny- it <i>had</i> to be here...<br>Love u bro 😅",
+    /**/ "Here's a nice one after yesterday's sacrelidge... There will be more bad ones tho..."]
 
 
 
