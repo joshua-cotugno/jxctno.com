@@ -5,7 +5,8 @@
 <head>
     <meta name="viewport" content="width=device-width">
     <meta charset="utf-8">
-    <title>Advent Calendar</title>
+    <title>Charli's Adventure Calendar</title>
+    <link rel="icon" type="image/x-icon" href="/media/favicon.png">
     <style type="text/css">
         @font-face {
             font-family: candycane;
@@ -76,7 +77,9 @@
             transform: scale(1.1);
         }
 
-        #message img {max-height: 300px;}
+        #message img {
+            max-height: 300px;
+        }
 
         #container {
             position: relative;
@@ -92,7 +95,7 @@
         }
 
         #message #image {
-            width:400px;
+            width: 400px;
             background-color: #590000;
             padding: 10px 10px 10px 10px;
         }
@@ -214,34 +217,39 @@
             </table>
         </div>
         <div id="message">
-            
-            
-            
-            
+
+
+
+
 
             <table>
                 <colgroup>
-                <col style="width: 360px">
+                    <col style="width: 360px">
                 </colgroup>
                 <tbody>
-                  <tr>
-                    <td align="right"><button id="closeButton" onclick="closemessage()">×</button></td>
-                  </tr>
-                  <tr>
-                    <td><h1 id="messageHeader"></h1></td>
-                  </tr>
-                  <tr>
-                    <td><img id="message_image" src=""><br></td>
-                  </tr>
-                  <tr>
-                    <td><p1 id="messageText"></p1></td>
-                  </tr>
+                    <tr>
+                        <td align="right"><button id="closeButton" onclick="closemessage()">×</button></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h1 id="messageHeader"></h1>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img id="message_image" src=""><br></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p1 id="messageText"></p1>
+                        </td>
+                    </tr>
                 </tbody>
-                </table>
+            </table>
         </div>
     </div>
     <div id="hidden" hidden>
-        <audio id="audio" src="https://raw.githubusercontent.com/jxctno/jxctno.github.io/main/media/doorcreak.wav"></audio>
+        <audio id="audio"
+            src="https://raw.githubusercontent.com/jxctno/jxctno.github.io/main/media/doorcreak.wav"></audio>
     </div>
 
 </body>
