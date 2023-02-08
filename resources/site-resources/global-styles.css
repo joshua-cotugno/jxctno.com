@@ -10,6 +10,10 @@ header {
   padding: 20px;
 }
 
+.title {
+	color: #ddd;
+}
+
 h1 {
   margin: 0;
 }
@@ -83,6 +87,6 @@ h1 {
 
 /* Add a color to the active/current link */
 .navbar a.active {
-  background-color: #04AA6D;
+  background-color: #04aa6d;
   color: white;
 }
