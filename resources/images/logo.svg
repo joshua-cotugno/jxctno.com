@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 10000 10000"
+   version="1.1"
+   id="svg16"
+   width="10000"
+   height="10000"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs20" />
+  <circle
+     cx="50"
+     cy="50"
+     r="45"
+     fill="#0000ff"
+     id="circle12" />
+  <g
+     id="g388"
+     transform="matrix(1.9150903,0,0,1.9150903,-61.577428,-35.163613)">
+    <g
+       id="g1162"
+       transform="matrix(1.0348103,0,0,1,-3.8204694,0)">
+      <text
+         x="50"
+         y="58"
+         font-size="40px"
+         font-family="Arial"
+         text-anchor="middle"
+         fill="#ffffff"
+         id="text14"
+         style="fill:#ffffff;fill-opacity:1"><tspan
+           id="tspan282"
+           x="50"
+           y="58">J</tspan><tspan
+           id="tspan284"
+           x="50"
+           y="108" /></text>
+      <text
+         x="65.573822"
+         y="58.004551"
+         font-size="40.3513px"
+         font-family="Arial"
+         text-anchor="middle"
+         fill="#ffffff"
+         id="text14-3"
+         style="fill:#ffffff;fill-opacity:1;stroke-width:1.00879"
+         transform="scale(0.9912936,1.0087829)"><tspan
+           id="tspan282-4"
+           x="65.573822"
+           y="58.004551"
+           style="stroke-width:1.00879">X</tspan><tspan
+           id="tspan284-0"
+           x="65.573822"
+           y="108.44367"
+           style="stroke-width:1.00879" /></text>
+      <rect
+         style="fill:#ffffff;fill-opacity:1;stroke-width:0.522169"
+         id="rect1151"
+         width="4.730175"
+         height="2.1703424"
+         x="49.133766"
+         y="56.328568" />
+    </g>
+  </g>
+</svg>
