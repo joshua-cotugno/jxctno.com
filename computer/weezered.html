@@ -1,0 +1,32 @@
+<html>
+<script>
+    function openNewBackgroundTab(site) {
+        var a = document.createElement("a");
+        a.href = site;
+        var evt = document.createEvent("MouseEvents");
+        //the tenth parameter of initMouseEvent sets ctrl key
+        evt.initMouseEvent("click", true, true, window, 0, 0, 0, 0, 0,
+            true, false, false, false, 0, null);
+        a.dispatchEvent(evt);
+    }
+
+    var txt
+
+    function hahah() {
+        alert("You're about to get weezered!!!")
+        openNewBackgroundTab("https://www.youtube.com/watch?v=l-7fTrL4jv4")
+        while (true) {
+            txt = txt + "\nget weezered lol"
+            console.log(txt)
+            document.getElementById("x").innerHTML += "<br>get weezered lol"
+        }
+    }
+</script>
+<p>This is a lil' thing I made. It is a type of *THEORETICAL* browser crasher that creates an infinite loop that fills
+    up RAM and the GPU, and for just desserts it weezers you. Please don't click the button on this page unless you
+    *want* to crash your browser, and potentially your computer. This is for theoretical use only and I am not
+    responsible for any damages, whatsoever.</p>
+<button onclick='hahah()'>Click Me Please</button>
+<div id="x"> </div>
+
+</html>
