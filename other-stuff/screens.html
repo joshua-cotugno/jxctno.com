@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="ticker.css">
+</head>
+
+<body>
+    <style>
+        /* (A) FIXED WRAPPER */
+        .hwrap {
+            overflow: hidden;
+            /* HIDE SCROLL BAR */
+            background: #ff0011;
+            color: white;
+            font-weight: bolder;
+        }
+
+        /* (B) MOVING TICKER WRAPPER */
+        .hmove {
+            display: flex;
+        }
+
+        /* (C) ITEMS - INTO A LONG HORIZONTAL ROW */
+        .hitem {
+            flex-shrink: 0;
+            width: 60%;
+            box-sizing: border-box;
+            padding: 5px;
+            text-align: center;
+        }
+
+        .hseperator {
+            flex-shrink: 0;
+            width: 10%;
+            box-sizing: border-box;
+            padding: 5px;
+            text-align: center;
+        }
+
+        /* (D) ANIMATION - MOVE ITEMS FROM RIGHT TO LEFT */
+        /* 4 ITEMS -400%, CHANGE THIS IF YOU ADD/REMOVE ITEMS */
+        @keyframes tickerh {
+            0% {
+                transform: translate3d(10%, 0, 0);
+            }
+
+            100% {
+                /*                      Speed */
+                transform: translate3d(-2000px, 0, 0);
+            }
+        }
+
+        .hmove {
+            animation: tickerh linear 20s infinite;
+        }
+
+        /*.hmove:hover { animation-play-state: paused; }
+*/
+
+        * {
+            font-family: Arial;
+        }
+
+        .clock {
+            flex-shrink: 0;
+            width: 15%;
+            box-sizing: border-box;
+            padding: 5px;
+            text-align: center;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 2fr 20fr;
+            grid-gap: 5px;
+        }
+
+        .bottom {
+            position: fixed;
+            bottom: 0%;
+            width: 100%;
+        }
+
+
+        /* Slideshow */
+        /* Styling the area of the slides */
+        #slideshow {
+            overflow: hidden;
+            height: 510px;
+            width: 728px;
+            margin: 0 auto;
+        }
+
+        /* Style each of the sides
+  with a fixed width and height */
+        .slide {
+            float: left;
+            height: 510px;
+            width: 728px;
+        }
+
+        /* Add animation to the slides */
+        .slide-wrapper {
+            /* Calculate the total width on the
+  basis of number of slides */
+            width: calc(728px * 4);
+
+            /* Specify the animation with the
+  duration and speed */
+            animation: slide 5s ease infinite;
+        }
+
+        /* Set the background color
+  of each of the slides */
+        .slide:nth-child(1) {
+            background: green;
+        }
+
+        .slide:nth-child(2) {
+            background: pink;
+        }
+
+        .slide:nth-child(3) {
+            background: red;
+        }
+
+        .slide:nth-child(4) {
+            background: yellow;
+        }
+
+        /* Define the animation
+  for the slideshow */
+        @keyframes slide {
+            20% {
+                margin-left: 0px;
+            }
+
+            40% {
+                margin-left: calc(-728px * 1);
+            }
+
+            60% {
+                margin-left: calc(-728px * 2);
+            }
+
+            80% {
+                margin-left: calc(-728px * 3);
+            }
+        }
+    </style>
+    <script>
+        setInterval(showTime, 1000);
+        function showTime() {
+            let time = new Date();
+            let hour = time.getHours();
+            let min = time.getMinutes();
+            let sec = time.getSeconds();
+
+            hour = hour < 10 ? "0" + hour : hour;
+            min = min < 10 ? "0" + min : min;
+            document.getElementById("hour")
+                .innerHTML = hour;
+
+            document.getElementById("min")
+                .innerHTML = min;
+
+            document.getElementById("sec")
+                .innerHTML = sec;
+        }
+        showTime();
+
+        function blink() {
+            var text = document.getElementById('blink');
+            setInterval(function () {
+                text.style.display = (text.style.display == 'none' ? '' : 'none');
+            }, 1000);
+        }
+
+    </script>
+    <div id="contentContainer">
+        <div id="slideshow">
+            <div class="slide-wrapper">
+                <div class="slide">
+                    <h1 class="slide-number">
+                        Hers's some sldes which can have anything inside of them.
+                    </h1>
+                </div>
+                <div class="slide">
+                    <h1 class="slide-number">
+                        You can ut PDFs, Images and even videoes in them that could be set to automatically play.
+                    </h1>
+                </div>
+                <div class="slide">
+                    <h1 class="slide-number">
+                        The animation time and the time that the slide is onscreen can also be edited.
+                    </h1>
+                </div>
+                <div class="slide">
+                    <h1 class="slide-number">
+                        All it needs is a little more work!
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid-container bottom">
+        <div id="clock" class="clock grid-child" onload="showTime()">
+            <span id="hour">xx</span>:<span id="min">xx</span>:<span id="sec">xx</span>
+        </div>
+
+        <div class="hwrap grid-child">
+            <div class="hmove"> <!-- Place News below 
+            TODO: MAKE DYNAMIC ENTRIES-->
+                <div class="hitem">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                <div class="hseperator">•</div>
+                <div class="hitem">Aliquam consequat varius consequat.</div>
+                <div class="hseperator">•</div>
+                <div class="hitem">Fusce dapibus turpis vel nisi malesuada sollicitudin.</div>
+                <div class="hseperator">•</div>
+                <div class="hitem">Pellentesque auctor molestie orci ut blandit.</div>
+                <div class="hseperator">•</div>
+                <div class="hitem">Another Test item</div>
+                <div class="hseperator">•</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
