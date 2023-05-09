@@ -88,7 +88,7 @@
 			<li data-key="t" data-value="20p">20p</li>
 			<li data-key="y" data-value="50p">50p</li>
 			<li data-key="a" data-value="£1">£1</li>
-			<li data-key="2" data-value="£2">£2</li>
+			<li data-key="s" data-value="£2">£2</li>
 			<li data-key="z" data-value="£5 note">£5 note</li>
 			<li data-key="x" data-value="£10 note">£10 note</li>
 	</ul>
@@ -189,7 +189,7 @@
         total += 100;
         coins[100]++;
         break;
-      case "2":
+      case "s":
         total += 200;
         coins[200]++;
         break;
@@ -210,6 +210,74 @@
     localStorage.setItem("total", total.toString());
     localStorage.setItem("notes", JSON.stringify(notes));
   }
+	
+function handleShiftKeyPress(event) {
+  // Check if shift key is pressed
+  if (!event.shiftKey) {
+    return;
+  }
+
+  switch (event.key.toLowerCase()) {
+    case "q":
+      if (coins[1] > 0) {
+        total -= 1;
+        coins[1]--;
+      }
+      break;
+    case "w":
+      if (coins[2] > 0) {
+        total -= 2;
+        coins[2]--;
+      }
+      break;
+    case "e":
+      if (coins[5] > 0) {
+        total -= 5;
+        coins[5]--;
+      }
+      break;
+    case "r":
+      if (coins[10] > 0) {
+        total -= 10;
+        coins[10]--;
+      }
+      break;
+    case "t":
+      if (coins[20] > 0) {
+        total -= 20;
+        coins[20]--;
+      }
+      break;
+    case "y":
+      if (coins[50] > 0) {
+        total -= 50;
+        coins[50]--;
+      }
+      break;
+    case "a":
+      if (coins[100] > 0) {
+        total -= 100;
+        coins[100]--;
+      }
+      break;
+    case "s":
+      if (coins[200] > 0) {
+        total -= 200;
+        coins[200]--;
+      }
+      break;
+    default:
+      break;
+  }
+  
+  updateDisplay();
+
+  // Save data to localStorage
+  localStorage.setItem("coins", JSON.stringify(coins));
+  localStorage.setItem("total", total.toString());
+  localStorage.setItem("notes", JSON.stringify(notes));
+}
+
 
   // Add event listener for key press
   document.addEventListener("keypress", handleKeyPress);
