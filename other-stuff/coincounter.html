@@ -278,6 +278,14 @@ function handleShiftKeyPress(event) {
   localStorage.setItem("notes", JSON.stringify(notes));
 }
 
+	function clearLocalStorage() {
+  localStorage.clear();
+  total = 0;
+  coins = {1: 0, 2: 0, 5: 0, 10: 0, 20: 0, 50: 0, 100: 0, 200: 0};
+  notes = {5: 0, 10: 0};
+  updateDisplay();
+}
+
 
   // Add event listener for key press
   document.addEventListener("keypress", handleKeyPress);
