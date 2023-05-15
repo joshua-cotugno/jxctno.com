@@ -1,0 +1,132 @@
+/* Body styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header styles */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  position: relative;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+header button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+}
+
+/* Main styles */
+main {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.main-container {
+  width: 48%;
+}
+
+.currency-container {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.currency-container:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.currency-container h2 {
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.currency-container p {
+  margin: 0;
+}
+
+.currency-container input[type="number"] {
+  width: 100%;
+  margin-bottom: 5px;
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.currency-container label {
+  font-size: 16px;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.currency-container button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 5px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.currency-container button:hover {
+  background-color: #444;
+}
+
+.total-container {
+  background-color: #333;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.total-container h2 {
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.total-container p {
+  margin: 0;
+  font-size: 24px;
+}
+
+/* Footer styles */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
