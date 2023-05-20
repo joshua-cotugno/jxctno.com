@@ -1,251 +1,93 @@
 <!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
+
 <head>
-  <link rel="stylesheet" type="text/css" href="resources/site-resources/global_styles.css">
-  <style>
-    .counter {
-      padding: 20px;
-      font-size: 24px;
-    }
-    .coin-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-    }
-    .coin {
-      background-color: var(--backgroundAccent);
-      color: var(--darkBackText);
-      border: none;
-      padding: 10px 20px;
-      font-size: 18px;
-      cursor: pointer;
-      margin-bottom: 10px;
-    }
-    .totals {
-      margin-top: 20px;
-      font-size: 18px;
-    }
-  </style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
 </head>
+
 <body>
-  <header>
-    <h1 class="title">Coin Counter</h1>
-  </header>
-  <div class="container">
-    <div class="card">
-      <h2>Counter</h2>
-      <div class="counter" id="counter">0</div>
-      <div class="coin-container">
-        <div class="coin" onclick="incrementCounter(1)">
-          <div class="coin-info">
-            <div class="coin-name">1p</div>
-            <div class="coin-totals">TOTAL COINS: <span id="total1p">0</span></div>
-            <div class="coin-totals">TOTAL VALUE: £<span id="value1p">0.01</span></div>
-          </div>
-        </div>
-        <div class="coin" onclick="incrementCounter(2)">
-          <div class="coin-info">
-            <div class="coin-name">2p</div>
-            <div class="coin-totals">TOTAL COINS: <span id="total2p">0</span></div>
-            <div class="coin-totals">TOTAL VALUE: £<span id="value2p">0.02</span></div>
-          </div>
-        </div>
-        <div class="coin" onclick="incrementCounter(5)">
-          <div class="coin-info">
-            <div class="coin-name">5p</div>
-            <div class="coin-totals">TOTAL COINS: <span id="total5p">0</span></div>
-            <div class="coin-totals">TOTAL VALUE: £<span id="value5p">0.05</span></div>
-          </div>
-        </div>
-        <div class="coin" onclick="incrementCounter(10)">
-          <div class="coin-info">
-            <div class="coin-name">10p</div>
-            <div class="coin-totals">TOTAL COINS: <span id="total10p">0</span></div>
-            <div class="coin-totals">TOTAL VALUE: £<span id="value10p">0.10</span></div>
-          </div>
-        </div>
-        <div class="coin" onclick="incrementCounter(20)">
-          <div class="coin-info">
-            <div class="coin-name">20p</div>
-            <div class="coin-totals">TOTAL COINS: <span id="total20p">0</span></div>
-            <div class="coin-totals">TOTAL VALUE: £<span id="value20p">0.20</span></div>
-          </div>
-        </div>
-        <div class="coin" onclick="incrementCounter(50)">
-          <div class="coin-info">
-            <div class="coin-name">50p</div>
-            <div class="coin-totals">TOTAL COINS: <span id="total50p">0</span></div>
-            <div class="coin-totals">TOTAL VALUE: £<span id="value50p">0.50</span></div>
-          </div>
-        </div>
-        <div class="coin" onclick="incrementCounter(100)">
-          <div class="coin-info">
-            <div class="coin-name">£1</div>
-            <div class="coin-totals">TOTAL COINS: <span id="totalPnd1">0</span></div>
-            <div class="coin-totals">TOTAL VALUE: £<span id="valuePnd1">1.00</span></div>
-          </div>
-        </div>
-        <div class="coin" onclick="incrementCounter(200)">
-          <div class="coin-info">
-            <div class="coin-name">£2</div>
-            <div class="coin-totals">TOTAL COINS: <span id="totalPnd2">0</span></div>
-            <div class="coin-totals">TOTAL VALUE: £<span id="valuePnd2">2.00</span></div>
-          </div>
-        </div>
-        <div class="coin" onclick="incrementCounter(500)">
-          <div class="coin-info">
-            <div class="coin-name">£5</div>
-            <div class="coin-totals">TOTAL COINS: <span id="totalPnd5">0</span></div>
-            <div class="coin-totals">TOTAL VALUE: £<span id="valuePnd5">5.00</span></div>
-          </div>
-        </div>
-        <div class="coin" onclick="incrementCounter(1000)">
-          <div class="coin-info">
-            <div class="coin-name">£10</div>
-            <div class="coin-totals">TOTAL COINS: <span id="totalPnd10">0</span></div>
-            <div class="coin-totals">TOTAL VALUE: £<span id="valuePnd10">10.00</span></div>
-          </div>
-        </div>
-        <div class="coin" onclick="incrementCounter(2000)">
-          <div class="coin-info">
-            <div class="coin-name">£20</div>
-            <div class="coin-totals">TOTAL COINS: <span id="totalPnd20">0</span></div>
-            <div class="coin-totals">TOTAL VALUE: £<span id="valuePnd20">20.00</span></div>
-          </div>
-        </div>
-      </div>
-      <div class="totals">
-        <h3>Totals</h3>
-        <p>1p: <span id="total1p">0</span></p>
-        <p>2p: <span id="total2p">0</span></p>
-        <p>5p: <span id="total5p">0</span></p>
-        <p>10p: <span id="total10p">0</span></p>
-        <p>20p: <span id="total20p">0</span></p>
-        <p>50p: <span id="total50p">0</span></p>
-        <p>£1: <span id="totalPnd1">0</span></p>
-        <p>£2: <span id="totalPnd2">0</span></p>
-        <p>£5: <span id="totalPnd5">0</span></p>
-        <p>£10: <span id="totalPnd10">0</span></p>
-        <p>£20: <span id="totalPnd20">0</span></p>
-        <p>Grand Total: <span id="grandTotal">0</span></p>
-      </div>
-    </div>
-  </div>
-  <footer class="footer">
-    <p>&copy; 2023 Coin Counter</p>
-  </footer>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
 
-  <script>
-    let counterValue = 0;
-    let total1p = 0;
-    let total2p = 0;
-    let total5p = 0;
-    let total10p = 0;
-    let total20p = 0;
-    let total50p = 0;
-    let totalPnd1 = 0;
-    let totalPnd2 = 0;
-    let totalPnd5 = 0;
-    let totalPnd10 = 0;
-    let totalPnd20 = 0;
-    let value50p = 0;
-    let valuePnd1 = 0;
-    let valuePnd2 = 0;
-    let valuePnd5 = 0;
-    let valuePnd10 = 0;
-    let valuePnd20 = 0;
-    
-    const counterElement = document.getElementById('counter');
-    const total1pElement = document.getElementById('total1p');
-    const total2pElement = document.getElementById('total2p');
-    const total5pElement = document.getElementById('total5p');
-    const total10pElement = document.getElementById('total10p');
-    const total20pElement = document.getElementById('total20p');
-    const total50pElement = document.getElementById('total50p');
-    const totalPnd1Element = document.getElementById('totalPnd1');
-    const totalPnd2Element = document.getElementById('totalPnd2');
-    const totalPnd5Element = document.getElementById('totalPnd5');
-    const totalPnd10Element = document.getElementById('totalPnd10');
-    const totalPnd20Element = document.getElementById('totalPnd20');
-    const grandTotalElement = document.getElementById('grandTotal');
-    const value50pElement = document.getElementById('value50p');
-    const valuePnd1Element = document.getElementById('valuePnd1');
-    const valuePnd2Element = document.getElementById('valuePnd2');
-    const valuePnd5Element = document.getElementById('valuePnd5');
-    const valuePnd10Element = document.getElementById('valuePnd10');
-    const valuePnd20Element = document.getElementById('valuePnd20');
+    <script>
+        var coinlist = {}
+        // Function to check the browser storage for a JSON object called "coinlist"
+        function checkCoinlist() {
+            // Check if localStorage is supported by the browser
+            if (typeof localStorage !== 'undefined') {
+                // Check if "coinlist" exists in localStorage
+                if (localStorage.getItem('coinlist')) {
+                    // Retrieve the stored value and parse it as JSON
+                    var coinlist = JSON.parse(localStorage.getItem('coinlist'));
 
-    function incrementCounter(amount) {
-      counterValue += amount;
-      updateCounter();
-      updateTotals(amount);
-    }
+                    // Do something with the coinlist object
+                    console.log(coinlist);
+                    // You can access individual properties like coinlist["1p"], coinlist["2p"], etc.
+                } else {
+                    // "coinlist" does not exist in localStorage
+                    coinlist = {
+                        "1p": 0,
+                        "2p": 0,
+                        "5p": 0,
+                        "10p": 0,
+                        "20p": 0,
+                        "50p": 0,
+                        "pnd1": 0,
+                        "pnd2": 0,
+                        "pnd5": 0,
+                        "pnd10": 0,
+                        "pnd20": 0,
+                        "pnd50": 0
+                    }
+                }
+            } else {
+                alert('localStorage is not supported by the browser.');
+            }
+        }
 
-    function updateCounter() {
-      counterElement.textContent = counterValue;
-    }
+        // Function to save a variable called "coinlist" to browser storage
+        function saveCoinlist(coinlist) {
+            // Check if localStorage is supported by the browser
+            if (typeof localStorage !== 'undefined') {
+                // // Convert the coinlist variable to a JSON string
+                // var coinlistJSON = JSON.stringify(coinlist);
 
-    function updateTotals(amount) {
-      switch (amount) {
-        case 1:
-          total1p += 1;
-          total1pElement.textContent = total1p;
-          break;
-        case 2:
-          total2p += 1;
-          total2pElement.textContent = total2p;
-          break;
-        case 5:
-          total5p += 1;
-          total5pElement.textContent = total5p;
-          break;
-        case 10:
-          total10p += 1;
-          total10pElement.textContent = total10p;
-          break;
-        case 20:
-          total20p += 1;
-          total20pElement.textContent = total20p;
-          break;
-        case 50:
-          total50p += 1;
-          total50pElement.textContent = total50p;
-          break;
-        case 100:
-          totalPnd1 += 1;
-          totalPnd1Element.textContent = totalPnd1;
-          break;
-        case 200:
-          totalPnd2 += 1;
-          totalPnd2Element.textContent = totalPnd2;
-          break;
-        case 500:
-          totalPnd5 += 1;
-          totalPnd5Element.textContent = totalPnd5;
-          break;
-        case 1000:
-          totalPnd10 += 1;
-          totalPnd10Element.textContent = totalPnd10;
-          break;
-        case 2000:
-          totalPnd20 += 1;
-          totalPnd20Element.textContent = totalPnd20;
-          break;
-      }
-      updateGrandTotal();
-    }
+                // Save the JSON string to localStorage
+                localStorage.setItem('coinlist', coinlist);
+            } else {
+                console.log('localStorage is not supported by the browser.');
+            }
+        }
 
-    function updateGrandTotal() {
-      let grandTotal = total1p + total2p + total5p + total10p + total20p + total50p + totalPnd1 + totalPnd2 + totalPnd5 + totalPnd10 + totalPnd20;
-      grandTotalElement.textContent = grandTotal;
-    }
-
-    value50pElement.textContent = (50 / 100).toFixed(2);
-    valuePnd1Element.textContent = (100 / 100).toFixed(2);
-    valuePnd2Element.textContent = (200 / 100).toFixed(2);
-    valuePnd5Element.textContent = (500 / 100).toFixed(2);
-    valuePnd10Element.textContent = (1000 / 100).toFixed(2);
-    valuePnd20Element.textContent = (2000 / 100).toFixed(2);
-  </script>
+        coinlist = {
+            "1p": 0,
+            "2p": 0,
+            "5p": 0,
+            "10p": 0,
+            "20p": 0,
+            "50p": 0,
+            "pnd1": 0,
+            "pnd2": 0,
+            "pnd5": 0,
+            "pnd10": 0,
+            "pnd20": 0,
+            "pnd50": 0
+        }
+        function addCoin(coinNum, coinType, qty = 1) {
+            cointContainer = document.getElementById(cointype)
+            coinlist[cointype] += qty
+        }
+    </script>
 </body>
+
 </html>
