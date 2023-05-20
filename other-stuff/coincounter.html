@@ -1,437 +1,251 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <title>Money Counter</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f7f7f7;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        }
-
-        h1 {
-            font-size: 36px;
-            margin: 0 0 20px;
-            text-align: center;
-        }
-
-        p {
-            font-size: 18px;
-            margin: 0 0 10px;
-        }
-
-        ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-        li {
-            flex-basis: calc(20% - 10px);
-            margin: 0 10px 10px 0;
-            padding: 10px;
-            background-color: #eee;
-            border-radius: 5px;
-            text-align: center;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-        }
-
-        li:last-child {
-            margin-right: 0;
-        }
-
-        li:before {
-            content: attr(data-key);
-            display: block;
-            font-size: 24px;
-            margin-bottom: 10px;
-            color: #333;
-            font-weight: bold;
-            text-align: center;
-        }
-
-        li:after {
-            content: attr(data-value);
-            display: block;
-            font-size: 16px;
-            color: #999;
-            text-align: center;
-        }
-
-        .total {
-            font-size: 36px;
-            font-weight: bold;
-            margin: 20px 0;
-            text-align: center;
-            color: #333;
-        }
-
-        .coins {
-            font-size: 18px;
-            font-weight: bold;
-            margin: 10px 0;
-            text-align: center;
-            color: #333;
-        }
-
-        /* MOBILE TEMP */
-        /* Body styles */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-            margin: 0;
-            padding: 0;
-        }
-
-        /* Header styles */
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-            position: relative;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 24px;
-        }
-
-        header button {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            right: 10px;
-            background-color: transparent;
-            border: none;
-            color: #fff;
-            font-size: 16px;
-        }
-
-        /* Main styles */
-        main {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 10px;
-            box-sizing: border-box;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-
-        .main-container {
-            width: 48%;
-        }
-
-        .currency-container {
-            background-color: #fff;
-            border-radius: 5px;
-            padding: 10px;
-            margin-bottom: 10px;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .currency-container h2 {
-            font-size: 18px;
-            margin-top: 0;
-            margin-bottom: 10px;
-        }
-
-        .currency-container p {
-            margin: 0;
-        }
-
-        .currency-container input[type="number"] {
-            width: 100%;
-            margin-bottom: 5px;
-            padding: 5px;
-            font-size: 16px;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-        }
-
-        .currency-container label {
-            font-size: 16px;
-            margin-bottom: 5px;
-            display: block;
-        }
-
-        .currency-container button {
-            background-color: #333;
-            color: #fff;
-            border: none;
-            padding: 5px 10px;
-            border-radius: 3px;
-            font-size: 16px;
-            cursor: pointer;
-            margin-top: 5px;
-        }
-
-        .currency-container button:hover {
-            background-color: #444;
-        }
-
-        .total-container {
-            background-color: #333;
-            color: #fff;
-            border-radius: 5px;
-            padding: 10px;
-            margin-bottom: 10px;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .total-container h2 {
-            font-size: 18px;
-            margin-top: 0;
-            margin-bottom: 10px;
-        }
-
-        .total-container p {
-            margin: 0;
-            font-size: 24px;
-        }
-
-        /* Footer styles */
-        footer {
-            background-color: #333;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
+  <link rel="stylesheet" type="text/css" href="resources/site-resources/global_styles.css">
+  <style>
+    .counter {
+      padding: 20px;
+      font-size: 24px;
+    }
+    .coin-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .coin {
+      background-color: var(--backgroundAccent);
+      color: var(--darkBackText);
+      border: none;
+      padding: 10px 20px;
+      font-size: 18px;
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+    .totals {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+  </style>
 </head>
-
 <body>
-    <div class="container">
-        <h1>Money Counter</h1>
-        <p>Press the following keys to count up different monetary values:</p>
-        <ul>
-            <li data-key="q" data-value="1p">1p</li>
-            <li data-key="w" data-value="2p">2p</li>
-            <li data-key="e" data-value="5p">5p</li>
-            <li data-key="r" data-value="10p">10p</li>
-            <li data-key="t" data-value="20p">20p</li>
-            <li data-key="y" data-value="50p">50p</li>
-            <li data-key="a" data-value="£1">£1</li>
-            <li data-key="s" data-value="£2">£2</li>
-            <li data-key="z" data-value="£5 note">£5 note</li>
-            <li data-key="x" data-value="£10 note">£10 note</li>
-        </ul>
-        <div class="total">Total: £<span id="total">0.00</span></div>
-        <div class="coins">
-            <p>Coins:</p>
-            <ul>
-                <li>1p: <span id="coin1p">0</span></li>
-                <li>2p: <span id="coin2p">0</span></li>
-                <li>5p: <span id="coin5p">0</span></li>
-                <li>10p: <span id="coin10p">0</span></li>
-                <li>20p: <span id="coin20p">0</span></li>
-                <li>50p: <span id="coin50p">0</span></li>
-                <li>£1: <span id="coin1">0</span></li>
-                <li>£2: <span id="coin2pound">0</span></li>
-            </ul>
-            <p>Notes:</p>
-            <ul>
-                <li>£5: <span id="note5">0</span></li>
-                <li>£10: <span id="note10">0</span></li>
-            </ul>
+  <header>
+    <h1 class="title">Coin Counter</h1>
+  </header>
+  <div class="container">
+    <div class="card">
+      <h2>Counter</h2>
+      <div class="counter" id="counter">0</div>
+      <div class="coin-container">
+        <div class="coin" onclick="incrementCounter(1)">
+          <div class="coin-info">
+            <div class="coin-name">1p</div>
+            <div class="coin-totals">TOTAL COINS: <span id="total1p">0</span></div>
+            <div class="coin-totals">TOTAL VALUE: £<span id="value1p">0.01</span></div>
+          </div>
         </div>
+        <div class="coin" onclick="incrementCounter(2)">
+          <div class="coin-info">
+            <div class="coin-name">2p</div>
+            <div class="coin-totals">TOTAL COINS: <span id="total2p">0</span></div>
+            <div class="coin-totals">TOTAL VALUE: £<span id="value2p">0.02</span></div>
+          </div>
+        </div>
+        <div class="coin" onclick="incrementCounter(5)">
+          <div class="coin-info">
+            <div class="coin-name">5p</div>
+            <div class="coin-totals">TOTAL COINS: <span id="total5p">0</span></div>
+            <div class="coin-totals">TOTAL VALUE: £<span id="value5p">0.05</span></div>
+          </div>
+        </div>
+        <div class="coin" onclick="incrementCounter(10)">
+          <div class="coin-info">
+            <div class="coin-name">10p</div>
+            <div class="coin-totals">TOTAL COINS: <span id="total10p">0</span></div>
+            <div class="coin-totals">TOTAL VALUE: £<span id="value10p">0.10</span></div>
+          </div>
+        </div>
+        <div class="coin" onclick="incrementCounter(20)">
+          <div class="coin-info">
+            <div class="coin-name">20p</div>
+            <div class="coin-totals">TOTAL COINS: <span id="total20p">0</span></div>
+            <div class="coin-totals">TOTAL VALUE: £<span id="value20p">0.20</span></div>
+          </div>
+        </div>
+        <div class="coin" onclick="incrementCounter(50)">
+          <div class="coin-info">
+            <div class="coin-name">50p</div>
+            <div class="coin-totals">TOTAL COINS: <span id="total50p">0</span></div>
+            <div class="coin-totals">TOTAL VALUE: £<span id="value50p">0.50</span></div>
+          </div>
+        </div>
+        <div class="coin" onclick="incrementCounter(100)">
+          <div class="coin-info">
+            <div class="coin-name">£1</div>
+            <div class="coin-totals">TOTAL COINS: <span id="totalPnd1">0</span></div>
+            <div class="coin-totals">TOTAL VALUE: £<span id="valuePnd1">1.00</span></div>
+          </div>
+        </div>
+        <div class="coin" onclick="incrementCounter(200)">
+          <div class="coin-info">
+            <div class="coin-name">£2</div>
+            <div class="coin-totals">TOTAL COINS: <span id="totalPnd2">0</span></div>
+            <div class="coin-totals">TOTAL VALUE: £<span id="valuePnd2">2.00</span></div>
+          </div>
+        </div>
+        <div class="coin" onclick="incrementCounter(500)">
+          <div class="coin-info">
+            <div class="coin-name">£5</div>
+            <div class="coin-totals">TOTAL COINS: <span id="totalPnd5">0</span></div>
+            <div class="coin-totals">TOTAL VALUE: £<span id="valuePnd5">5.00</span></div>
+          </div>
+        </div>
+        <div class="coin" onclick="incrementCounter(1000)">
+          <div class="coin-info">
+            <div class="coin-name">£10</div>
+            <div class="coin-totals">TOTAL COINS: <span id="totalPnd10">0</span></div>
+            <div class="coin-totals">TOTAL VALUE: £<span id="valuePnd10">10.00</span></div>
+          </div>
+        </div>
+        <div class="coin" onclick="incrementCounter(2000)">
+          <div class="coin-info">
+            <div class="coin-name">£20</div>
+            <div class="coin-totals">TOTAL COINS: <span id="totalPnd20">0</span></div>
+            <div class="coin-totals">TOTAL VALUE: £<span id="valuePnd20">20.00</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="totals">
+        <h3>Totals</h3>
+        <p>1p: <span id="total1p">0</span></p>
+        <p>2p: <span id="total2p">0</span></p>
+        <p>5p: <span id="total5p">0</span></p>
+        <p>10p: <span id="total10p">0</span></p>
+        <p>20p: <span id="total20p">0</span></p>
+        <p>50p: <span id="total50p">0</span></p>
+        <p>£1: <span id="totalPnd1">0</span></p>
+        <p>£2: <span id="totalPnd2">0</span></p>
+        <p>£5: <span id="totalPnd5">0</span></p>
+        <p>£10: <span id="totalPnd10">0</span></p>
+        <p>£20: <span id="totalPnd20">0</span></p>
+        <p>Grand Total: <span id="grandTotal">0</span></p>
+      </div>
     </div>
+  </div>
+  <footer class="footer">
+    <p>&copy; 2023 Coin Counter</p>
+  </footer>
 
-    <script>
-        // Initialize variables
-        let total = 0;
-        let coins = {
-            1: 0,
-            2: 0,
-            5: 0,
-            10: 0,
-            20: 0,
-            50: 0,
-            100: 0,
-            200: 0,
-        };
-        let notes = {
-            5: 0,
-            10: 0,
-        };
+  <script>
+    let counterValue = 0;
+    let total1p = 0;
+    let total2p = 0;
+    let total5p = 0;
+    let total10p = 0;
+    let total20p = 0;
+    let total50p = 0;
+    let totalPnd1 = 0;
+    let totalPnd2 = 0;
+    let totalPnd5 = 0;
+    let totalPnd10 = 0;
+    let totalPnd20 = 0;
+    let value50p = 0;
+    let valuePnd1 = 0;
+    let valuePnd2 = 0;
+    let valuePnd5 = 0;
+    let valuePnd10 = 0;
+    let valuePnd20 = 0;
+    
+    const counterElement = document.getElementById('counter');
+    const total1pElement = document.getElementById('total1p');
+    const total2pElement = document.getElementById('total2p');
+    const total5pElement = document.getElementById('total5p');
+    const total10pElement = document.getElementById('total10p');
+    const total20pElement = document.getElementById('total20p');
+    const total50pElement = document.getElementById('total50p');
+    const totalPnd1Element = document.getElementById('totalPnd1');
+    const totalPnd2Element = document.getElementById('totalPnd2');
+    const totalPnd5Element = document.getElementById('totalPnd5');
+    const totalPnd10Element = document.getElementById('totalPnd10');
+    const totalPnd20Element = document.getElementById('totalPnd20');
+    const grandTotalElement = document.getElementById('grandTotal');
+    const value50pElement = document.getElementById('value50p');
+    const valuePnd1Element = document.getElementById('valuePnd1');
+    const valuePnd2Element = document.getElementById('valuePnd2');
+    const valuePnd5Element = document.getElementById('valuePnd5');
+    const valuePnd10Element = document.getElementById('valuePnd10');
+    const valuePnd20Element = document.getElementById('valuePnd20');
 
-        // Load saved data
-        if (localStorage.getItem("coins")) {
-            coins = JSON.parse(localStorage.getItem("coins"));
-            total = parseFloat(localStorage.getItem("total"));
-            notes = JSON.parse(localStorage.getItem("notes"));
-        }
+    function incrementCounter(amount) {
+      counterValue += amount;
+      updateCounter();
+      updateTotals(amount);
+    }
 
-        // Update display function
-        function updateDisplay() {
-            // Update total
-            document.getElementById("total").textContent = (total / 100).toFixed(2);
+    function updateCounter() {
+      counterElement.textContent = counterValue;
+    }
 
-            // Update coins
-            document.getElementById("coin1p").textContent = coins[1];
-            document.getElementById("coin2p").textContent = coins[2];
-            document.getElementById("coin5p").textContent = coins[5];
-            document.getElementById("coin10p").textContent = coins[10];
-            document.getElementById("coin20p").textContent = coins[20];
-            document.getElementById("coin50p").textContent = coins[50];
-            document.getElementById("coin1").textContent = coins[100];
-            document.getElementById("coin2pound").textContent = coins[200];
+    function updateTotals(amount) {
+      switch (amount) {
+        case 1:
+          total1p += 1;
+          total1pElement.textContent = total1p;
+          break;
+        case 2:
+          total2p += 1;
+          total2pElement.textContent = total2p;
+          break;
+        case 5:
+          total5p += 1;
+          total5pElement.textContent = total5p;
+          break;
+        case 10:
+          total10p += 1;
+          total10pElement.textContent = total10p;
+          break;
+        case 20:
+          total20p += 1;
+          total20pElement.textContent = total20p;
+          break;
+        case 50:
+          total50p += 1;
+          total50pElement.textContent = total50p;
+          break;
+        case 100:
+          totalPnd1 += 1;
+          totalPnd1Element.textContent = totalPnd1;
+          break;
+        case 200:
+          totalPnd2 += 1;
+          totalPnd2Element.textContent = totalPnd2;
+          break;
+        case 500:
+          totalPnd5 += 1;
+          totalPnd5Element.textContent = totalPnd5;
+          break;
+        case 1000:
+          totalPnd10 += 1;
+          totalPnd10Element.textContent = totalPnd10;
+          break;
+        case 2000:
+          totalPnd20 += 1;
+          totalPnd20Element.textContent = totalPnd20;
+          break;
+      }
+      updateGrandTotal();
+    }
 
-            // Update notes
-            document.getElementById("note5").textContent = notes[5];
-            document.getElementById("note10").textContent = notes[10];
-        }
+    function updateGrandTotal() {
+      let grandTotal = total1p + total2p + total5p + total10p + total20p + total50p + totalPnd1 + totalPnd2 + totalPnd5 + totalPnd10 + totalPnd20;
+      grandTotalElement.textContent = grandTotal;
+    }
 
-        // Handle key press function
-        function handleKeyPress(event) {
-            switch (event.key) {
-                case "q":
-                    total += 1;
-                    coins[1]++;
-                    break;
-                case "w":
-                    total += 2;
-                    coins[2]++;
-                    break;
-                case "e":
-                    total += 5;
-                    coins[5]++;
-                    break;
-                case "r":
-                    total += 10;
-                    coins[10]++;
-                    break;
-                case "t":
-                    total += 20;
-                    coins[20]++;
-                    break;
-                case "y":
-                    total += 50;
-                    coins[50]++;
-                    break;
-                case "a":
-                    total += 100;
-                    coins[100]++;
-                    break;
-                case "s":
-                    total += 200;
-                    coins[200]++;
-                    break;
-                case "z":
-                    notes[5]++;
-                    break;
-                case "x":
-                    notes[10]++;
-                    total += 1000;
-                    break;
-                default:
-                    break;
-            }
-            updateDisplay();
-
-            // Save data to localStorage
-            localStorage.setItem("coins", JSON.stringify(coins));
-            localStorage.setItem("total", total.toString());
-            localStorage.setItem("notes", JSON.stringify(notes));
-        }
-
-        function handleShiftKeyPress(event) {
-            // Check if shift key is pressed
-            if (!event.shiftKey) {
-                return;
-            }
-
-            switch (event.key.toLowerCase()) {
-                case "q":
-                    if (coins[1] > 0) {
-                        total -= 1;
-                        coins[1]--;
-                    }
-                    break;
-                case "w":
-                    if (coins[2] > 0) {
-                        total -= 2;
-                        coins[2]--;
-                    }
-                    break;
-                case "e":
-                    if (coins[5] > 0) {
-                        total -= 5;
-                        coins[5]--;
-                    }
-                    break;
-                case "r":
-                    if (coins[10] > 0) {
-                        total -= 10;
-                        coins[10]--;
-                    }
-                    break;
-                case "t":
-                    if (coins[20] > 0) {
-                        total -= 20;
-                        coins[20]--;
-                    }
-                    break;
-                case "y":
-                    if (coins[50] > 0) {
-                        total -= 50;
-                        coins[50]--;
-                    }
-                    break;
-                case "a":
-                    if (coins[100] > 0) {
-                        total -= 100;
-                        coins[100]--;
-                    }
-                    break;
-                case "s":
-                    if (coins[200] > 0) {
-                        total -= 200;
-                        coins[200]--;
-                    }
-                    break;
-                default:
-                    break;
-            }
-
-            updateDisplay();
-
-            // Save data to localStorage
-            localStorage.setItem("coins", JSON.stringify(coins));
-            localStorage.setItem("total", total.toString());
-            localStorage.setItem("notes", JSON.stringify(notes));
-        }
-
-        function clearLocalStorage() {
-            localStorage.clear();
-            total = 0;
-            coins = { 1: 0, 2: 0, 5: 0, 10: 0, 20: 0, 50: 0, 100: 0, 200: 0 };
-            notes = { 5: 0, 10: 0 };
-            updateDisplay();
-        }
-
-
-        // Add event listener for key press
-        document.addEventListener("keypress", handleKeyPress);
-
-        // Load saved data on page load
-        updateDisplay();
-    </script>
+    value50pElement.textContent = (50 / 100).toFixed(2);
+    valuePnd1Element.textContent = (100 / 100).toFixed(2);
+    valuePnd2Element.textContent = (200 / 100).toFixed(2);
+    valuePnd5Element.textContent = (500 / 100).toFixed(2);
+    valuePnd10Element.textContent = (1000 / 100).toFixed(2);
+    valuePnd20Element.textContent = (2000 / 100).toFixed(2);
+  </script>
 </body>
-<html>
+</html>
