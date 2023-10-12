@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Display HTML from URL Parameter</title>
+</head>
+<body>
+    <div id="content"></div>
+
+    <script>
+        // Get the URL parameter named 'd'
+        const urlParams = new URLSearchParams(window.location.search);
+        const htmlCode = urlParams.get('d');
+
+        // Check if 'd' parameter exists and is not empty
+        if (htmlCode) {
+            // Display the HTML content
+            const contentDiv = document.getElementById('content');
+            contentDiv.innerHTML = htmlCode;
+        } else {
+            // Handle the case when 'd' parameter is missing or empty
+            const contentDiv = document.getElementById('content');
+            contentDiv.textContent = "Parameter 'd' not found or empty.";
+        }
+    </script>
+</body>
+</html>
