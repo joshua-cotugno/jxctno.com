@@ -1,8 +1,9 @@
 @echo off
 
 :: Create React App
-npx create-react-app my-app
-cd my-app
+cd ..
+npx create-react-app jxctno.github.io
+cd jxctno.github.io
 
 :: Create components directory
 mkdir src/components
