@@ -1,63 +1,170 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Joshua Cotugno - Landing Page</title>
+        <link rel="stylesheet" href="resources/css/globalstyles.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        />
+    </head>
+    <body>
+        <div class="topbar">
+            <header class="header">
+                <h1 class="title">Welcome to Joshua Cotugno's Website</h1>
+                <nav class="navbar">
+                    <!-- Links to sections -->
+                    <a href="#music" class="navbar-items">Music</a>
+                    <a href="#computers" class="navbar-items">Computers</a>
+                    <a href="#other" class="navbar-items">Other</a>
+                </nav>
+            </header>
+        </div>
 
-<head>
-    <!-- Metas -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Joshua Cotugno's Website">
-    <meta name="charset" content="UTF-8">
-    <meta charset="utf-8">
-    <title>Home | jxctno.page</title>
-    <link rel="icon" type="image/ico" href="resources/images/logo.png">
-    <link rel="stylesheet" href="resources/site-resources/global-styles.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
-    <script src="resources/site-resources/load_scripts.js"></script>
-    
-</head>
+        <div class="container">
+            <!-- Music Section as a card -->
+            <div id="music" class="card">
+                <h2>Music</h2>
+                <p>Content related to music goes here...</p>
+            </div>
 
-<body>
-    <header>
-        <h1 class="title">Joshua Cotugno's Homepage</h1>
-    </header>
-    <div class="container">
-        <div class="card">
-            <div onclick="location.href='music/index.html'">
-                <img src="resources/images/music_homepage.jpg" alt="Music Stuffs">
-                <h2>My Music Portfolio</h2>
-                <p>A Portfolio page for all the music projects I have been part of</p>
-                
+            <!-- Computer Science Section as a card -->
+            <div id="computer-science" class="card">
+                <h2>Computers</h2>
+                <p>Content related to computer science goes here...</p>
+            </div>
+
+            <!-- Other Section as a card -->
+            <div id="other" class="card" onclick="location.href='./other/index.html';">
+                <h2>Other Projects</h2>
+                <p>Other content goes here...</p>
             </div>
         </div>
-        <div class="card" onclick="location.href='computer/index.html'">
-            <img src="resources/images/computer_homepage.jpg" alt="Computer Stuff">
-            <h2>My Computing Stuff</h2>
-            <p>Computing Projects that I've made (or WIP) that I think are pretty cool</p>
-        </div>
-        <div class="card" onclick="location.href='other-stuff/index.html'">
-            <img src="resources/images/otherprojects_homepage.jpg" alt="Other Projects">
-            <h2>My other Projects</h2>
-            <p>Some other projects I've been working on</p>
-        </div>
-        <div class="card" onclick="location.href='about.html'">
-            <img src="resources/images/my_homepage.jpg" alt="Other Projects">
-            <h2>About Me</h2>
-            <p>A lil' spiel about who I am, and other stuff like that</p>
-        </div>
-    </div>
-    <div class="footer">
-        <footer>
-            <br>
-            <div class="contact"> <p3>Contact Me!</p3><br>
-                <a href="https://instagram.com/jxctno.bmp"> <img alt="Instagram Icon"
-                        src="resources/images/instagram_icon.svg" height="10px">&nbsp;Instagram</a>
-                <a href="mailto:jxctno@gmail.com"><img alt="Gmail Icon"
-                    src="resources/images/gmail_icon.svg" height="10px">&nbsp;Email</a>
-            </div>
-            All media and this Website © 2022 <a href="https://www.jxctno.page">Joshua Cotugno</a><br>Hosted by <a
-                href="domains.google.com">domains.google.com</a> and <a href="https://pages.github.com/">GitHub Pages</a>
-                <br>
-        </footer><br>
-    </div>
-</body>
 
+        <footer class="footer">
+            <p>&copy; 2023 Joshua Cotugno</p>
+            <!-- Instagram and Gmail icons -->
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="mailto:jxctno@gmail.com" target="_blank" title="Gmail">
+                <i class="far fa-envelope"></i>
+            </a>
+        </footer>
+    </body>
+</html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Added viewport meta element -->
+        <title>Joshua Cotugno - Landing Page</title>
+        <link rel="stylesheet" href="resources/css/globalstyles.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        />
+    </head>
+    <body>
+        <div class="topbar">
+            <header class="header">
+                <h1 class="title">Welcome to Joshua Cotugno's Website</h1>
+                <nav class="navbar">
+                    <!-- Links to sections -->
+                    <a href="#music" class="navbar-items">Music</a>
+                    <a href="#computers" class="navbar-items">Computers</a>
+                    <a href="#other" class="navbar-items">Other</a>
+                </nav>
+            </header>
+        </div>
+
+        <div class="container">
+            <!-- Music Section as a card -->
+            <div id="music" class="card">
+                <h2>Music</h2>
+                <p>Content related to music goes here...</p>
+            </div>
+
+            <!-- Computer Science Section as a card -->
+            <div id="computer-science" class="card">
+                <h2>Computers</h2>
+                <p>Content related to computer science goes here...</p>
+            </div>
+
+            <!-- Other Section as a card -->
+            <div id="other" class="card" onclick="location.href='./other/index.html';">
+                <h2>Other Projects</h2>
+                <p>Other content goes here...</p>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>&copy; 2023 Joshua Cotugno</p>
+            <!-- Instagram and Gmail icons -->
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="mailto:jxctno@gmail.com" target="_blank" title="Gmail">
+                <i class="far fa-envelope"></i>
+            </a>
+        </footer>
+    </body>
+</html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Joshua Cotugno - Landing Page</title>
+        <link rel="stylesheet" href="resources/css/globalstyles.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        />
+    </head>
+    <body>
+        <div class="topbar">
+            <header class="header">
+                <h1 class="title">Welcome to Joshua Cotugno's Website</h1>
+                <nav class="navbar">
+                    <!-- Links to sections -->
+                    <a href="#music" class="navbar-items">Music</a>
+                    <a href="#computers class="navbar-items"
+                        >Computers</a
+                    >
+                    <a href="#other" class="navbar-items">Other</a>
+                </nav>
+            </header>
+        </div>
+
+        <div class="container">
+            <!-- Music Section as a card -->
+            <div id="music" class="card">
+                <h2>Music</h2>
+                <p>Content related to music goes here...</p>
+            </div>
+
+            <!-- Computer Science Section as a card -->
+            <div id="computer-science" class="card">
+                <h2>Computers</h2>
+                <p>Content related to computer science goes here...</p>
+            </div>
+
+            <!-- Other Section as a card -->
+            <div id="other" class="card" onclick="location.href='./other/index.html';"
+            >
+                <h2>Other Projects</h2>
+                <p>Other content goes here...</p>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>&copy; 2023 Joshua Cotugno</p>
+            <!-- Instagram and Gmail icons -->
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="mailto:jxctno@gmail.com" target="_blank" title="Gmail">
+                <i class="far fa-envelope"></i>
+            </a>
+        </footer>
+    </body>
 </html>
