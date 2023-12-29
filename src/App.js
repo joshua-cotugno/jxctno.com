@@ -2,8 +2,8 @@
 
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from './Home';
-import Music from './Music';
+import Home from './views/Home';
+import Music from './views/Music';
 
 const App = () => {
   return (
