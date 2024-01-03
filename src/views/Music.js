@@ -3,8 +3,8 @@ import "../css/App.css";
 import TopBar from "../TopBar";
 import Card from "../Card";
 import Footer from "../Footer";
-import { ContentBoxMain, ContentBoxSecondary, ImageBox, Slideshow, VideoBox } from "../Content";
-import { Collapse } from "../Collapse";
+import { ContentBoxMain, ContentBoxSecondary, ImageBox, Slideshow, VideoBox, Collapse } from "../Content";
+
 
 function Music() {
   return (
@@ -40,9 +40,15 @@ function Music() {
           redirectURL={"#other"}
         />
       </div>
-      <Collapse title="Sheet Music" content={
-        "Here is some dummy content for my website.. How nice it it to be a fat cat who jumps over the lazy dog"
-      } />
+      <Collapse
+        title="Sheet Music"
+        content={[
+          "Here is the first paragraph.",
+          "Here is the second paragraph.",
+          "And another paragraph...",
+        ]}
+      />
+      <br></br>
       <Footer />
     </div>
   );

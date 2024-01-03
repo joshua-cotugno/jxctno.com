@@ -2,14 +2,7 @@
 
 import React from "react";
 import "./css/TopBar.css"; // Import your styles for the top bar
-
-function linkTo(location) {
-  return (
-    <a href={location} className="navbar-items">
-      {location}
-    </a>
-  );
-}
+  
 function TopBar() {
   return (
     <div className="topbar">
@@ -19,10 +12,10 @@ function TopBar() {
       </header>
 
       <nav className="navbar">
-        <linkTo location="./index.html" />
-        <linkTo location="./music.html" />
-        <linkTo location="./computer-science.html" />
-        <linkTo location="./other.html" />
+        <a href="./index.html" />
+        <a href="./music.html" />
+        <a href="./computer-science.html" />
+        <a href="./other.html" />
       </nav>
     </div>
   );
