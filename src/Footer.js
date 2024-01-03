@@ -8,8 +8,9 @@ function Footer() {
   return (
     <footer className="footer">
       <p>&copy; 2023 Joshua Cotugno</p>
-      <a class="socials" href="https://instagram.com/jxctno.bmp"><i class="fa fa-instagram"></i> @jxctno.bmp</a>
-      <a class="socials" href="mailto:jxctno@jxctno.com"><i class="fa fa-envelope"></i> jxctno@jxctno.com</a>
+      <a className="socials" href="https://instagram.com/jxctno.bmp"><i className="fa fa-instagram"></i>&nbsp; @jxctno.bmp</a>
+      <a className="socials" href="mailto:jxctno@jxctno.com"><i className="fa fa-envelope"></i>&nbsp; jxctno@jxctno.com</a>
+      <a href="./credits">Credits</a>
     </footer>
   );
 }

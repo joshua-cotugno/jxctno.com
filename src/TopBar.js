@@ -7,8 +7,7 @@ function TopBar() {
   return (
     <div className="topbar">
       <header className="header">
-        <h1 className="title">Welcome to My Domain</h1>
-        <p1 className="subtitle">Gettit?</p1>
+        <h1 className="title">Welcome to My Website</h1>
       </header>
 
       <nav className="navbar">

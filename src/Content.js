@@ -55,7 +55,7 @@ function ImageBox({ id, imageURL, imageAlt, caption, wrap, align }) {
 }
 
 
-function Collapse({ title, content }) {
+function Collapse({ title, content, ident }) {
     const [open, setOpen] = React.useState(false);
 
     useEffect(() => {
@@ -76,7 +76,7 @@ function Collapse({ title, content }) {
     }, []);
 
     return (
-        <div className="collapsible">
+        <div className="collapsible" id={ident}>
             <button className="collapsible-button" onClick={() => setOpen(!open)}>
                 {title}
             </button>

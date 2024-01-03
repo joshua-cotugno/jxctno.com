@@ -44,9 +44,6 @@ function ComputerScience() {
           redirectURL={"#projects"}
         />
       </div>
-      
-      
-      
       {/* Render the footer */}
       <Footer />
     </div>

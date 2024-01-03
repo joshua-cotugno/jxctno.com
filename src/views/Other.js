@@ -33,4 +33,4 @@ function Other() {
   );
 }
 
-export default Music;
+export default Other;

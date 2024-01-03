@@ -40,14 +40,30 @@ function Music() {
           redirectURL={"#other"}
         />
       </div>
-      <Collapse
+      <ContentBoxMain
+        id="sheets"
         title="Sheet Music"
         content={[
-          "Here is the first paragraph.",
-          "Here is the second paragraph.",
-          "And another paragraph...",
-        ]}
+          "When learning a new song, solo or with a band, I like to transcribe the music myself. I find that this helps me learn the song better, and it's also a lot of fun!",
+          "My go-to software for transcribing music is MuseScore, a free and open-source music notation software. I've been using it for years, and I've found it to be very intuitive and easy to use.",
+          "Here are some of the songs I've transcribed for numerous instruments.",
+        ]} />
+      <div className="container">
+      <Card
+        id="FamousLastWords"
+        title="Famous Last Words - My Chemical Romance"
+        imageURL="https://i.ibb.co/xF4VZSt/Famous-Last-Words.png"
+        content={<a href="https://musescore.com/user/52780709/scores/8368668">View on MuseScore</a>}
+        redirectURL={"https://musescore.com/user/52780709/scores/8368668"}
       />
+      <Card
+        id="Trapdoor"
+        title="Trapdoor - Twenty One Pilots"
+        imageURL="https://i.ibb.co/0mQ1q2Y/Trapdoor.png"
+        content={<a href="https://musescore.com/user/52780709/scores/6771538">View on MuseScore</a>}
+        redirectURL={"https://musescore.com/user/52780709/scores/6771538"}
+      />
+      </div>
       <br></br>
       <Footer />
     </div>
