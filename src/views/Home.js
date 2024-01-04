@@ -8,31 +8,39 @@ function Home() {
   return (
     <div className="Home">
       <TopBar />
-      <div className="container">
+      <div className="page-container">
         <div className="container">
           <Card
             id="music"
             imgURL="https://i.ibb.co/KrZt6mG/joshua-guitar-concert-mr-brightside.jpg"
             imgAlt="Joshua playing guitar at a concert"
             title="Music"
-            content="Content related to music goes here..."
+            content="My music projects and performances."
             redirectURL={"/music"}
           />
           <Card
             id="computer-science"
-            imageAlt="A screenshot of the development of this website project"
-            imageURL="https://i.ibb.co/qRs4ngK/code.png"
+            imgAlt="A screenshot of the development of this website"
+            imgURL="https://i.ibb.co/qRs4ngK/code.png"
             title="Computer Science"
-            content="Content related to computer science goes here..."
+            content="Projects related to Computer Science."
             redirectURL={"/computer-science"}
           />
           <Card
             id="other"
             imgURL="https://i.ibb.co/znHsMhP/slideshow-guitarcapacitor.png"
-            imageAlt="A screenshot of a powerpoint presentation about capacitors in guitars"
+            imgAlt="A screenshot of a powerpoint presentation about capacitors in guitars"
             title="Other Projects"
-            content="Other content goes here..."
+            content="Other projects of mine"
             redirectURL={"/other"}
+          />
+          <Card
+            id="personal-statement"
+            imgURL="https://i.ibb.co/0Xy0b1W/Personal-Statement.png"
+            imgAlt="A screenshot of my personal statement"
+            title="Personal Statement"
+            content="My personal statement for university applications"
+            redirectURL={"/personal-statement"}
           />
         </div>
       </div>

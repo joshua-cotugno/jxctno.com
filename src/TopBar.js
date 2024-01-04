@@ -2,7 +2,7 @@
 
 import React from "react";
 import "./css/TopBar.css"; // Import your styles for the top bar
-  
+
 function TopBar() {
   return (
     <div className="topbar">
@@ -10,12 +10,12 @@ function TopBar() {
         <h1 className="title">Welcome to My Website</h1>
       </header>
 
-      <nav className="navbar">
-        <a href="./index.html" />
-        <a href="./music.html" />
-        <a href="./computer-science.html" />
-        <a href="./other.html" />
-      </nav>
+      <div className="navbar">
+        <button className="navbutton" onClick={() => window.location.href = "/"}>Home</button>
+        <button className="navbutton" onClick={() => window.location.href = "/music"}>Music</button>
+        <button className="navbutton" onClick={() => window.location.href = "/computer-science"}>Computer Science</button>
+        <button className="navbutton" onClick={() => window.location.href = "/other"}>Other Projects</button>
+      </div>
     </div>
   );
 }

@@ -9,8 +9,10 @@ function Card({ id, title, content, imgURL, imgAlt, redirectURL }) {
 
   return (
     <div id={id} className="card" onClick={handleClick}>
-      <h2>{title}</h2>
+      <h2 className='card-title'>{title}</h2>
+      <div className="imgContainer">
       <img src={imgURL} alt={imgAlt} width="100%" />
+      </div>
       <p>{content}</p>
     </div>
   );
