@@ -24,7 +24,7 @@ function Credits() {
                     The source code for this website can be found on <a href="https://github.com/joshua-cotugno/jxctno.com"><i className='fa-brands fa-github'></i> GitHub</a>.
                     <br />
                     <br />
-                    The source code for the original website can be found on <a href="https://github.com/jxctno/jxctno.github.io"><i className='fa-brands fa-github'></i> GitHub</a>.
+                    The source code for the original website can be found on <a href="https://github.com/jxctno/jxctno.com"><i className='fa-brands fa-github'></i> GitHub</a>.
                     <br />
                     <br />
                     The images on this website are mine unless otherwise stated.

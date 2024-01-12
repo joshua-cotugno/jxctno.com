@@ -49,7 +49,7 @@ function ImageBox({ id, imageURL, imageAlt, caption, wrap, align }) {
         <div id={id} className={classList}>
             <img src={imageURL} alt={imageAlt} align={align} />
             <p>{caption}</p>
-            <span>HELLO I AM HERE</span>
+            <span></span>
         </div>
     );
 }

@@ -7,6 +7,8 @@ import Music from './views/Music';
 import ComputerScience from './views/ComputerScience';
 import Other from './views/Other';
 import Credits from './views/Credits';
+import PDF from './PDF.js';
+import PersonalStatement from './views/PersonalStatement';
 
 const App = () => {
   return (
@@ -18,6 +20,8 @@ const App = () => {
         <Route path="/computer-science" element={<ComputerScience />} />
         <Route path="/other" element={<Other />} />
         <Route path="/credits" element={<Credits />} />
+        <Route path="/PersonalStatement" element={<PersonalStatement />} />
+        <Route path="/other/Capacitors in Guitars.pdf" element={<PDF url="./resources/Capacitors in Guitars.pdf"/>} />
       </Routes>
     </Router>
   );
