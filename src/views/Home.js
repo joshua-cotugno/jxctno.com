@@ -34,14 +34,6 @@ function Home() {
             content="Other projects of mine"
             redirectURL={"/other"}
           />
-          <Card
-            id="personal-statement"
-            imgURL="https://i.ibb.co/0Xy0b1W/Personal-Statement.png"
-            imgAlt="A screenshot of my personal statement"
-            title="Personal Statement"
-            content="My personal statement for university applications"
-            redirectURL={"/personal-statement"}
-          />
         </div>
       </div>
       <Footer />
