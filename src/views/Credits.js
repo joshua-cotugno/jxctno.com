@@ -2,8 +2,8 @@
 
 import React from 'react';
 import '../css/Credits.css';
-import TopBar from '../TopBar';
-import Footer from '../Footer';
+import TopBar from '../components/TopBar';
+import Footer from '../components/Footer';
 
 // <script src="https://kit.fontawesome.com/8f6f16e58d.js" crossorigin="anonymous"></script> goes in index.html in public folder
 

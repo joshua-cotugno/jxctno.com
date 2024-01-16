@@ -1,8 +1,8 @@
 import React from "react";
 import "../css/App.css";
-import TopBar from "../TopBar";
-import Card from "../Card";
-import Footer from "../Footer";
+import TopBar from "../components/TopBar";
+import Card from "../components/Card";
+import Footer from "../components/Footer";
 
 function Home() {
   return (

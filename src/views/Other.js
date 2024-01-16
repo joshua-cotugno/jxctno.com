@@ -1,9 +1,9 @@
 import React from "react";
 import "../css/App.css";
-import TopBar from "../TopBar";
-import Card from "../Card";
-import Footer from "../Footer";
-import { ContentBoxMain, ContentBoxSecondary, ImageBox, Slideshow, VideoBox, Collapse } from "../Content";
+import TopBar from "../components/TopBar";
+import Card from "../components/Card";
+import Footer from "../components/Footer";
+import { ContentBoxMain, ContentBoxSecondary, ImageBox, Slideshow, VideoBox, Collapse } from "../components/Content";
 
 
 function Other() {
