@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "../css/Content.css";
 
 function ContentBoxMain({ id, title, content }) { // content is a large array where each element is a paragraph
@@ -26,7 +26,97 @@ function ContentBoxSecondary({ id, title, content }) {
     );
 }
 
-function Slideshow({ id, imageURLs, imageAlts }) { // imageURLs and imageAlts are arrays
+
+function Slideshow({ id, imageURLs, imageAlts }) {
+  // State to keep track of the current slide index
+  const [slideIndex, setSlideIndex] = useState(1);
+
+  useEffect(() => {
+    // Function to handle next/previous controls
+    const plusSlides = (n) => {
+      showSlides(slideIndex + n);
+    };
+
+    // Function to handle thumbnail image controls
+    const currentSlide = (n) => {
+      showSlides(n);
+    };
+
+    // Function to display slides
+    const showSlides = (n) => {
+      let newIndex = n;
+      const slides = document.getElementsByClassName("mySlides");
+      const dots = document.getElementsByClassName("dot");
+
+      // Reset to the first slide if exceeded the total number of slides
+      if (newIndex > slides.length) {
+        newIndex = 1;
+      }
+      // Set to the last slide if going backward from the first slide
+      if (newIndex < 1) {
+        newIndex = slides.length;
+      }
+
+      // Hide all slides
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+
+      // Remove "active" class from all dots
+      for (let i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+
+      // Display the current slide
+      slides[newIndex - 1].style.display = "block";
+      // Add "active" class to the corresponding dot
+      dots[newIndex - 1].className += " active";
+
+      // Update the slide index in the state
+      setSlideIndex(newIndex);
+    };
+
+    // Initial call to display the first slide
+    showSlides(slideIndex);
+  }, [slideIndex]); // Depend on slideIndex to re-run the effect when it changes
+
+  return (
+    <div id={id} className="slideshow">
+      {/* Slideshow container */}
+      <div className="slideshow-container">
+        {/* Full-width images with number and caption text */}
+        {imageURLs.map((url, index) => (
+          <div key={index} className={`mySlides fade ${index === slideIndex - 1 ? "active" : ""}`}>
+            <div className="numbertext">
+              {index + 1} / {imageURLs.length}
+            </div>
+            <img src={url} alt={imageAlts[index]} style={{ width: '100%' }} />
+            <div className="text">Caption Text</div>
+          </div>
+        ))}
+
+        {/* Next and previous buttons */}
+        <a className="prev" onClick={() => plusSlides(-1)}>
+          &#10094;
+        </a>
+        <a className="next" onClick={() => plusSlides(1)}>
+          &#10095;
+        </a>
+      </div>
+      <br />
+
+      {/* The dots/circles */}
+      <div style={{ textAlign: 'center' }}>
+        {imageURLs.map((_, index) => (
+          <span
+            key={index}
+            className={`dot ${index === slideIndex - 1 ? "active" : ""}`}
+            onClick={() => currentSlide(index + 1)}
+          ></span>
+        ))}
+      </div>
+    </div>
+  );
 }
 
 function VideoBox({ id, videoURL, videoAlt }) {

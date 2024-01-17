@@ -61,7 +61,7 @@ function Music() {
         <Card
           id="MusescoreProfile"
           title="MuseScore Profile"
-          imgURL="https://i.ibb.co/0Xy0b1W/Personal-Statement.png"
+          imgURL="https://i.ibb.co/jfPgdNc/musescore-profile.png"
           imgAlt="A screenshot of my personal statement"
           content={<a href="https://musescore.com/user/52780709">View on MuseScore</a>}
           redirectURL={"https://musescore.com/user/52780709"}
@@ -107,7 +107,7 @@ function Music() {
           <span>We wrote it in a workshop lead by Hannah Jane Lewis, a singer-songwriter from London.</span>,
           <span>I attempted to record it, but at the time I was using Ardour, a Digital Audio Workstation (DAW) for Linux, which I found to be very hard to use, so I never ended up with a finished result.</span>,
           <span>There is, however, a recording of us performing the song live at the end of the workshop, which you can listen to below.</span>,
-          // <iframe width="500" height="350" src="https://www.youtube.com/embed/pZI3ZtL_VRk?si=nI5ng7sGZHSOef2r" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <iframe width="500" height="350" src="https://www.youtube.com/embed/RCViVfr0OP8?si=lboQQCJOwEQbmXd-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         ]}
 
       />

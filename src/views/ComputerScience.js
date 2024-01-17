@@ -76,6 +76,13 @@ function ComputerScience() {
             <p1>I am creating a webapp to help students learn assembly language, using a Raspberry Pi Pico. I am using the Pico as an emulator with an OLED display ro show the register values and the current instruction. It is emulating a CPU like the one on <a href="https://peterhigginson.co.uk/LMC/"><icon class="fa fa-external-link" /> Little Man Computer</a> since its designed primarily as a learning tool</p1>
           ]}
         />
+        <Slideshow
+        imageURLs={[
+          "https://google.com/favicon.ico",
+          "https://facebook.com/favicon.ico",
+          "https://youtube.com/favicon.ico",
+          "https://twitter.com/favicon.ico"
+        ]}/>
         <ContentBoxMain
           id="linux"
           title="Linux"
