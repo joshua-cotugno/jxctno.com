@@ -8,13 +8,7 @@ import { ContentBoxMain, ContentBoxSecondary, ImageBox, Slideshow, VideoBox, Col
 
 // Function to display computer science-related content
 function ComputerScience() {
-  const scrollToSection = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      // element.scrollIntoView({ behavior: "smooth" });
-      element.scrollTo({ top: 0, behavior: "smooth" });
-    }
-  };
+ 
   return (
     <div className="App">
       {/* Render the top bar */}
@@ -29,7 +23,6 @@ function ComputerScience() {
           imgURL="https://i.ibb.co/CHFP7JK/hackintosh-2.jpg"
           imgAlt="My PC Hackintosh"
           content="I planned out and ordered the parts for my PC bespoke to run macOS."
-          onClick={() => scrollToSection("pc")}
         />
         <Card
           id="website"
@@ -37,7 +30,6 @@ function ComputerScience() {
           imgURL="https://i.ibb.co/wgP0P92/websitepic.png"
           imgAlt="Screenshot of this website"
           content="I built this website from scratch using ReactJS and CSS."
-          onClick={() => scrollToSection("website")}
         />
         <Card
           id="assemblr"
@@ -45,7 +37,6 @@ function ComputerScience() {
           imgURL="../img/assemblr.png"
           imgAlt="Assemblr"
           content="I am creating a webapp to help students learn assembly language, using a Raspberry Pi Pico."
-          onClick={() => scrollToSection("assemblr")}
         />
         <Card
           id="linux"
@@ -53,7 +44,6 @@ function ComputerScience() {
           imgURL="../img/linux.png"
           imgAlt="Linux"
           content="I have been using Linux for a few years now, and I have used many different distros."
-          onClick={() => scrollToSection("linux")}
         />
       </div>
       <div className="page-container">

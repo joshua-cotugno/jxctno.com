@@ -24,7 +24,8 @@
   overflow: hidden;
 }
 
-.content-box-main, .content-box-secondary {
+.content-box-main,
+.content-box-secondary {
   margin: 10%;
   margin-top: 0%;
   margin-bottom: 0%;
@@ -40,9 +41,9 @@
 }
 
 @media only screen and (max-width: 300px) {
-  .content-box-main { 
+  .content-box-main {
     padding: auto;
-    font-size: 11px 
+    font-size: 11px
   }
 }
 
@@ -85,7 +86,8 @@
   transition: background-color 0.6s ease;
 }
 
-.active-dot, .dot:hover {
+.active-dot,
+.dot:hover {
   background-color: #717171;
 }
 
@@ -97,27 +99,65 @@
 }
 
 @-webkit-keyframes fade {
-  from { opacity: .4 }
-  to { opacity: 1 }
+  from {
+    opacity: .4
+  }
+
+  to {
+    opacity: 1
+  }
 }
 
 @keyframes fade {
-  from { opacity: .4 }
-  to { opacity: 1 }
+  from {
+    opacity: .4
+  }
+
+  to {
+    opacity: 1
+  }
 }
 
 @media only screen and (max-width: 300px) {
-  .text { font-size: 11px }
+  .text {
+    font-size: 11px
+  }
 }
 
 @media only screen and (max-width: 600px) {
-  .text { font-size: 14px }
+  .text {
+    font-size: 14px
+  }
 }
 
 @media only screen and (max-width: 1000px) {
-  .text { font-size: 16px }
+  .text {
+    font-size: 16px
+  }
 }
 
 @media only screen and (max-width: 1200px) {
-  .text { font-size: 18px }
+  .text {
+    font-size: 18px
+  }
+}
+
+li {
+  list-style-type: none;
+}
+.mainTitle .topLink {
+  cursor: pointer;
+}
+
+.mainTitle .topLink:hover {
+  color: #1b4e80;
+}
+
+.mainTitle .topLink:hover .up {
+  display: inline;
+}
+
+.up {
+  display: none;
+  height: auto;
 }

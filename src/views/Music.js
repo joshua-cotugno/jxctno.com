@@ -33,13 +33,6 @@ function Music() {
           content="Here are some of the places I've performed, and plays I've been in."
           redirectURL={"#performances"}
         />
-        <Card
-          id="other"
-          title="Other Music Projects"
-          imgURL="https://i.ibb.co/HXDp5LS/I-Have-No-Lyrics-For-You-Cover.png"
-          content="A section for any other music-related projects I've worked on."
-          redirectURL={"#other"}
-        />
       </div>
       <ContentBoxMain
         id="sheets"
@@ -87,13 +80,13 @@ function Music() {
           title="Kaibutsu (怪物)- YOASOBI"
           imgURL="https://i.ibb.co/NVQjj99/kaibutsu.png"
           imgAlt="Kaibutsu sheet music"
-          content={<p><a href="https://musescore.com/user/52780709/scores/6771538">View on MuseScore</a><br/>My favourite arrangement to date</p>}
+          content={<p><a href="https://musescore.com/user/52780709/scores/6771538">View on MuseScore</a><br />My favourite arrangement to date</p>}
           redirectURL={"https://musescore.com/user/52780709/scores/6771538"}
         />
       </div>
-      <br></br>
+      <br />
       <line></line>
-      <br></br>
+      <br />
       <ContentBoxMain
         id="compositions"
         title="Compositions"
@@ -106,7 +99,7 @@ function Music() {
           </p>,
         ]}
       />
-      <br></br>
+      <br />
       <ContentBoxSecondary
         id="bittersweet"
         title="Bittersweet"
@@ -115,9 +108,46 @@ function Music() {
           <span>We wrote it in a workshop lead by Hannah Jane Lewis, a singer-songwriter from London.</span>,
           <span>I attempted to record it, but at the time I was using Ardour, a Digital Audio Workstation (DAW) for Linux, which I found to be very hard to use, so I never ended up with a finished result.</span>,
           <span>There is, however, a recording of us performing the song live at the end of the workshop, which you can listen to below.</span>,
+          <br />,
           <iframe width="500" height="350" src="https://www.youtube.com/embed/RCViVfr0OP8?si=lboQQCJOwEQbmXd-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         ]}
-
+      />
+      <br />
+      <ContentBoxMain
+        id="performances"
+        title="Performances"
+        content={[
+          <p>
+            Since around year 10, I've been performing in various bands and plays at school, playing either guitar or bass
+          </p>,
+          <p>
+            Here are some of the places I've performed, and plays I've been in:
+          </p>,
+          <h3>Plays:</h3>,
+          <li>
+            <ul><i>Grease</i> - 2019 (note, I was backstage, but helped make a wide variety of props)</ul>
+            <ul><i>Back to the 80s</i> - December 2021</ul>
+            <ul><i>Billy Elliot</i> - December 2022</ul>
+            <ul><i>Fame The Musical</i> - December 2023</ul>
+          </li>,
+          <h3>Showcases:</h3>,
+          <p>These are showcases of the performing arts departments at my school, where there is a wide variety of performances, from music to dance to drama.</p>,
+          <p>These are the songs I've performed in these showcases: <i>I am unsure of exactly when each happened</i></p>,
+          <li>
+            <ul><i>Wake Me Up When September Ends by Green Day</i> - Co-ordinator, Electric Guitar + Voice - School Rock Group</ul>
+            <ul><i>Mr Brightside by The Killers</i> - Guitar - V<sup>th</sup> Horizon</ul>
+            <ul><i>Cigarette Daydreams by Cage The Elephant</i> - Bass Guitar - V<sup>th</sup> Horizon</ul>
+            <ul><i>Disenchanted by My Chemical Romance</i> - Acoustic Guitar - Solo</ul>
+            <ul><i>Teenagers by My Chemical Romance</i> - Electric Guitar - Solo, with drummer + backup guitarist</ul>
+            <ul><i>House of Gold by Twenty One Pilots</i> - Ukulele + Voice - V<sup>th</sup> Horizon</ul>
+            <ul><i>Bags by Clairo</i> - Electric Guitar - V<sup>th</sup> Horizon</ul>
+            <ul><i>Nothing Else Matters by Metallica</i> - Acoustic Guitar - Solo</ul>
+            <ul><i>Teenage Dirtbag by Wheatus</i> - Acoustic Guitar + Voice - Solo with Drummer + Piano</ul>
+            <ul><i>Fluorescant Adolescent by Arctic Monkeys</i> - Electric Guitar - V<sup>th</sup> Horizon</ul>
+            <ul><i>Everlong by Foo Fighters</i> - Electric Guitar - V<sup>th</sup> Horizon</ul>
+            <ul>And many more... most of which I have since forgotten that I've performed them</ul>
+          </li>
+        ]}
       />
       <Footer />
     </div>

@@ -5,7 +5,7 @@ import "../css/TopBar.css"; // Import your styles for the top bar
 
 function TopBar() {
   return (
-    <div className="topbar">
+    <div id="headBar" className="topbar" >
       <header className="header">
         <h1 className="title">Welcome to My Website</h1>
       </header>
