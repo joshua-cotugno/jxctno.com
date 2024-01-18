@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'; // Import PropTypes for type checking
 
 function Card({ id, title, content, imgURL, imgAlt, redirectURL }) {
   const handleClick = () => {
-    window.location.href = redirectURL; // Redirect to the specified URL
+      window.location.href = redirectURL; // Redirect to the specified URL if no onClick function is specified
   };
 
   return (

@@ -1,7 +1,7 @@
 /* Card.css */
 
 .card {
-  background-color: #f5f5f5;
+  background-color: #fefefe;
   border: 1px solid #203040;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
   width: 300px;
@@ -32,6 +32,13 @@
   height: 200px;
   /* Display fixed alignment */
   display: flex;
+}
+
+.image-container img {
+  /* Center image */
+  margin: auto;
+  max-width: 100%;
+  max-height: 50%;
 }
 
 .card-title {

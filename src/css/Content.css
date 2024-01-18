@@ -24,12 +24,16 @@
   overflow: hidden;
 }
 
+.content-box-main, .content-box-secondary {
+  margin: 10%;
+  margin-top: 0%;
+  margin-bottom: 0%;
+}
+
 .content-box-main p {
   font-family: Arial;
   padding: 0 18px;
-  margin: 10 10;
 }
-
 
 .content-box-secondary p {
   font-family: Arial;
@@ -41,7 +45,6 @@
     font-size: 11px 
   }
 }
-
 
 .slideshow {
   position: relative;

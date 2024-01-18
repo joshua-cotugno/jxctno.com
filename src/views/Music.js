@@ -15,28 +15,28 @@ function Music() {
         <Card
           id="sheetmusic"
           title="Sheet Music"
-          imageURL="../img/sheetmusic.png"
+          imgURL="https://i.ibb.co/jfPgdNc/musescore-profile.png"
           content="Here are some of the songs I've transcribed for numerous instruments."
           redirectURL={"#sheets"}
         />
         <Card
           id="compositions"
           title="Compositions"
-          imageURL="https://i.imgur.com/4Q3QJ5b.png"
+          imgURL="https://i.ibb.co/jbkNnpV/piano.png"
           content="Here are some of the songs I've composed."
           redirectURL={"#compositions"}
         />
         <Card
           id="performances"
           title="Performances"
-          imageURL="https://i.imgur.com/4Q3QJ5b.png"
+          imgURL="https://i.ibb.co/KrZt6mG/joshua-guitar-concert-mr-brightside.jpg"
           content="Here are some of the places I've performed, and plays I've been in."
           redirectURL={"#performances"}
         />
         <Card
           id="other"
           title="Other Music Projects"
-          imageURL="https://i.imgur.com/4Q3QJ5b.png"
+          imgURL="https://i.ibb.co/HXDp5LS/I-Have-No-Lyrics-For-You-Cover.png"
           content="A section for any other music-related projects I've worked on."
           redirectURL={"#other"}
         />
@@ -80,6 +80,14 @@ function Music() {
           imgURL="https://i.ibb.co/3rnVV6g/Trapdoor.png"
           imgAlt="Trapdoor sheet music"
           content={<a href="https://musescore.com/user/52780709/scores/6771538">View on MuseScore</a>}
+          redirectURL={"https://musescore.com/user/52780709/scores/6771538"}
+        />
+        <Card
+          id="kaibutsu"
+          title="Kaibutsu (怪物)- YOASOBI"
+          imgURL="https://i.ibb.co/NVQjj99/kaibutsu.png"
+          imgAlt="Kaibutsu sheet music"
+          content={<p><a href="https://musescore.com/user/52780709/scores/6771538">View on MuseScore</a><br/>My favourite arrangement to date</p>}
           redirectURL={"https://musescore.com/user/52780709/scores/6771538"}
         />
       </div>
