@@ -8,7 +8,7 @@ import { ContentBoxMain, ContentBoxSecondary, ImageBox, Slideshow, VideoBox, Col
 
 // Function to display computer science-related content
 function ComputerScience() {
- 
+
   return (
     <div className="App">
       {/* Render the top bar */}
@@ -44,6 +44,13 @@ function ComputerScience() {
           imgURL="../img/linux.png"
           imgAlt="Linux"
           content="I have been using Linux for a few years now, and I have used many different distros."
+        />
+        <Card
+          id="github"
+          title="GitHub Projects"
+          imgURL="https://i.ibb.co/m8SV2sT/image.png"
+          imgAlt="jxctno0 GitHub profile"
+          content="I have a few projects on GitHub, including this website."
         />
       </div>
       <div className="page-container">
@@ -91,6 +98,34 @@ function ComputerScience() {
           ]}
         />
 
+        <ContentBoxMain
+          id="github"
+          title="GitHub Projects"
+          content={[
+            <p>I have a few projects on GitHub, including this website. I have a few projects on there, including:</p>,
+            <ul>
+              <li><a style={
+                {fontWeight: 100,
+                fontDecoration: 'none'}
+              } href="github.com/jxctno/jxctno.com"><icon class="fa fa-github" /> This website</a></li>
+              <li><a style={
+                {fontWeight: 100,
+                fontDecoration: 'none'}
+              } href="github.com/jxctno/Assemblr"><icon class="fa fa-github" /> Assemblr (as mentioned above)</a></li>
+              <li><a style={
+                {fontWeight: 100,
+                fontDecoration: 'none'}
+              } href="github.com/jxctno/Hackintosh-Gigabyte-H410M"><icon class="fa fa-github" /> My Hackintosh</a></li>
+              <li><a style={
+                {fontWeight: 100,
+                fontDecoration: 'none'}
+              } href="github.com/jxctno/.dotfiles"><icon class="fa fa-github" /> My dotfiles</a></li>
+              <li><a style={
+                {fontWeight: 100,
+                fontDecoration: 'none'}
+              } href="github.com/jxctno/omni-pkg"><icon class="fa fa-github" /> Omni Package Manager - A global package manager wrapper for Linux (under development)</a></li>
+            </ul>,]}
+        />
       </div>
       {/* Render the footer */}
       <Footer />
