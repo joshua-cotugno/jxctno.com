@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
+  /* padding: 20px; */
 }
 
 .header {
@@ -51,4 +51,21 @@ button:hover {
   border-radius: 5px;
   box-shadow: 0 0 5px #000;
   scale: 1.05;
+}
+
+#wipTape {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px, 20px;
+  background-color: #face00;
+  color: black;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+}
+
+#tapeText {
+  margin: 0;
+  padding: 0;
 }

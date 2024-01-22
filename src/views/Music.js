@@ -112,6 +112,54 @@ function Music() {
           <iframe width="500" height="350" src="https://www.youtube.com/embed/RCViVfr0OP8?si=lboQQCJOwEQbmXd-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         ]}
       />
+      <ContentBoxSecondary
+        id="railhead"
+        title="Railhead"
+        content={[
+          <span>This song is currently a work in progress for my A Level Music Composition, so until I've finished it, I can't share it here (for copyright reasons and invigilating checks)</span>,
+          <span>However, I can share the lyrics, and what the song is about.</span>,
+          <br />,
+
+          <span className="lyricsContainer">
+            <span class="lyrics section">Verse 1:</span>
+            <span class="lyrics stanza">
+              // Sweet apprehension,<br />
+              My saving grace <br />
+              From all the smog that <br />
+              Smothers my face<br />
+            </span>
+            <span class="lyrics stanza">// Love me or leave me,<br />
+              I’m done giving chase <br />
+              I’m growing tired in this <br />
+              Star-crossed rat race <br />
+            </span>
+            <span class="lyrics section">Chorus:</span>
+            <span class="lyrics stanza">// Faster than fairies, faster than witches <br />
+              Pass my desires, pass my wishes<br />
+              Desperately waiting for something new <br />
+              Leaving behind the world I knew <br /></span>
+
+            <span class="lyrics section">Verse 2:</span>
+            <span class="lyrics stanza">// Can’t turn away now <br />
+              The gates are locked <br />
+              The tracks are diverging, <br />
+              The signals are crossed<br />
+            </span>
+            <span class="lyrics stanza">// Listen to voices, <br />
+              Look to the stars<br />
+              The path is there somewhere, <br />
+              We’ve gone to far<br />
+            </span>
+
+            <span class="lyrics section">Chorus</span>
+            <span class="lyrics stanza"></span>
+            <span class="lyrics section">Solo (16 bars)</span>
+            <span class="lyrics stanza"></span>
+            <span class="lyrics section">Chorus (x2)</span>
+
+          </span>
+
+        ]} />
       <br />
       <ContentBoxMain
         id="performances"

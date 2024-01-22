@@ -16,6 +16,10 @@ function TopBar() {
         <button className="navbutton" onClick={() => window.location.href = "/computer-science"}>Computer Science</button>
         <button className="navbutton" onClick={() => window.location.href = "/other"}>Other Projects</button>
       </div>
+
+      <div id="wipTape">
+        <span id="tapetext"> ~ This Site is currently under active development!! Expect to see a couple of minor visual anomalies and/or non-functional links!! They *will* Be fixed! ~ </span>
+      </div>
     </div>
   );
 }
