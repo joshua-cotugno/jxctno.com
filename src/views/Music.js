@@ -154,7 +154,8 @@ function Music() {
             <span class="lyrics section">Chorus</span>
             <span class="lyrics stanza"></span>
             <span class="lyrics section">Solo (16 bars)</span>
-            <span class="lyrics stanza"></span>
+            <span class="lyrics stanza">Angels are dark<br/>The lights have gone gray
+            Can't tell the time anymore ,<br/>Can't tell the night from day</span>
             <span class="lyrics section">Chorus (x2)</span>
 
           </span>
