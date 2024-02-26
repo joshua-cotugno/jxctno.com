@@ -63,24 +63,3 @@ img {
   /* Display fixed alignment */
   display: flex;
 }
-
-.lyricsContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: left;
-  margin: 1px;
-}
-
-.lyrics {
-  font-family: "Consolas", 'Courier New', Courier, monospace;
-  padding-bottom: 10px; 
-}
-
-.section {
-  font-weight: bold;
-  font-style: italic;
-}
-
-.stanza {
-  font-weight: normal;
-}

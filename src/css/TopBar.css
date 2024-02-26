@@ -1,71 +1,36 @@
 /* TopBar.css */
 
+/* Add a background based on the theme.css */
+@import url('theme.css');
+
 .topbar {
-  background-color: #203040;
-  color: #f5f5f5;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  /* padding: 20px; */
-}
-
-.header {
-  padding-bottom: 10px;
-}
-
-.title {
-  margin: 0;
-}
-
-.navbar {
-  display: flex;
-  justify-content: center;
-}
-
-.navbar-items {
-  color: #f5f5f5;
-  text-decoration: none;
+  background-color: var(--primary);
   padding: 10px 20px;
-  margin: 0 10px;
+  top: 0;
 }
 
-.navbar-items:hover {
-  background-color: #fff;
-  color: #203040;
-  border-radius: 5px;
+.topbar-link {
+  margin-right: 20px;
 }
 
-button {
-  color: #fff;
-  text-decoration: none;
-  padding: 10px 20px;
-  margin: 0 10px;
+.topbar-button {
+  background-color: var(--secondary);
   border: none;
-  background-color: #232b32;
-  border-radius: 5px;
+  color: var(--text);
+  padding: 10px 20px;
+  
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease; /* Transition effect for all properties with 0.3s duration */
+  border-radius: 10px
 }
 
-button:hover {
-  background-color: #fff;
-  color: #203040;
-  border-radius: 5px;
-  box-shadow: 0 0 5px #000;
-  scale: 1.05;
-}
-
-#wipTape {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0px, 20px;
-  background-color: #face00;
-  color: black;
-  font-weight: bold;
-  font-family: Arial, Helvetica, sans-serif;
-  width: 100%;
-}
-
-#tapeText {
-  margin: 0;
-  padding: 0;
+.topbar-button:hover {
+  /* Do some maths to use the primary color as the hover color
+   */
+  background-color: var(--primary-hover);
+  color: var(--background-light);
+  transform: scale(1.1); /* Scale the button slightly on hover */
 }

@@ -1,6 +1,7 @@
 import React from "react";
 import "../css/App.css";
 import "../css/FontAwesome.css";
+import "../css/Music.css";
 import TopBar from "../components/TopBar";
 import Card from "../components/Card";
 import Footer from "../components/Footer";

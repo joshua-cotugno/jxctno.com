@@ -1,27 +1,48 @@
-// TopBar.js
-
-import React from "react";
-import "../css/TopBar.css"; // Import your styles for the top bar
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import "../css/TopBar.css";
 
 function TopBar() {
-  return (
-    <div id="headBar" className="topbar" >
-      <header className="header">
-        <h1 className="title">Welcome to My Website</h1>
-      </header>
+    // Step 1: Create a state variable to track the current theme
+    const [theme, setTheme] = useState("light");
 
-      <div className="navbar">
-        <button className="navbutton" onClick={() => window.location.href = "/"}>Home</button>
-        <button className="navbutton" onClick={() => window.location.href = "/music"}>Music</button>
-        <button className="navbutton" onClick={() => window.location.href = "/computer-science"}>Computer Science</button>
-        <button className="navbutton" onClick={() => window.location.href = "/other"}>Other Projects</button>
-      </div>
+    // Step 2: Function to toggle between dark and light themes
+    const toggleTheme = () => {
+        const newTheme = theme === "light" ? "dark" : "light";
+        // Save the selected theme to local storage
+        localStorage.setItem("theme", newTheme);
+        setTheme(newTheme);
+    };
 
-      <div id="wipTape">
-        <span id="tapetext"> ~ This Site is currently under active development!! Expect to see a couple of minor visual anomalies and/or non-functional links!! They *will* Be fixed! ~ </span>
-      </div>
-    </div>
-  );
+    // Step 3: Function to retrieve the saved theme from local storage
+    useEffect(() => {
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme) {
+            setTheme(savedTheme);
+        }
+    }, []);
+
+    return (
+        <div className={`topbar ${theme === "dark" ? "dark-theme" : ""}`}>
+            {/* Home */}
+            <Link to="/" className="topbar-link">
+                <button className="topbar-button">Home</button>
+            </Link>
+            {/* Computer Science */}
+            <Link to="/computerscience" className="topbar-link">
+                <button className="topbar-button">Computer Science</button>
+            </Link>
+            {/* Music */}
+            <Link to="/music" className="topbar-link">
+                <button className="topbar-button">Music</button>
+            </Link>
+            {/* About */}
+            <Link to="/about" className="topbar-link">
+                <button className="topbar-button">About</button>
+            </Link>
+            
+        </div>
+    );
 }
 
 export default TopBar;
