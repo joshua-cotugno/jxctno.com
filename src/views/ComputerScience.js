@@ -32,13 +32,6 @@ function ComputerScience() {
           content="I built this website from scratch using ReactJS and CSS."
         />
         <Card
-          id="assemblr"
-          title="Assemblr - Computer Science A Level Project"
-          imgURL="../img/assemblr.png"
-          imgAlt="Assemblr"
-          content="I am creating a webapp to help students learn assembly language, using a Raspberry Pi Pico."
-        />
-        <Card
           id="linux"
           title="Linux"
           imgURL="../img/linux.png"
@@ -72,25 +65,16 @@ function ComputerScience() {
           title="This Website"
           content={[
             "I built this website from scratch using ReactJS and CSS. I started by creating the basic structure of the website in plain html and css, and then I converted it to ReactJS teaching myself as I went along. I used the React Router to create the different pages.",
-            "I am hosting this website on Amazon Web Services (AWS). I am using AWS Amplify to host the website, and I am using Squarespace to manage the domain name.",
+            "I am hosting this website on Amazon Web Services. I am using AWS Amplify to host the website, and I am using Route53 to manage the domain name.",
             <p>Source code for this website is available on <a href="https://github.com/jxctno/jxctno.com"><icon class="fa fa-github" /> GitHub</a>.</p>
           ]} />
-
-        <ContentBoxMain
-          id="assemblr"
-          title="Assemblr - Computer Science A Level Project"
-          content={[
-            <p>I am creating a webapp to help students learn assembly language, using a Raspberry Pi Pico. I am using the Pico as an emulator with an OLED display ro show the register values and the current instruction. It is emulating a CPU like the one on <a href="https://peterhigginson.co.uk/LMC/"><icon class="fa fa-external-link" /> Little Man Computer</a> since its designed primarily as a learning tool</p>,
-            <p><i><b>This is currently a WIP, so keep an eye on this!</b></i></p>
-          ]}
-        />
 
         <ContentBoxMain
           id="linux"
           title="Linux"
           content={[
             <ImageBox
-              imgURL="https://i.ibb.co/7QJZQ4V/2021-09-19-20-28-42.png"
+              imgURL="https://i.ibb.co/nQxpy0X/image.png"
               imgAlt="Screenshot on how I've customised my desktop to look" />,
             "I have been using Linux for a few years now, and I have used many different distros. I started with Raspberry Pi OS, and then I moved to Ubuntu, which I used for a while. I didn't really break out of the Debian ecosystem until about 2021, when I started using Fedora. Since then, I have used Fedora, Arch, Manjaro, SUSE and a few others. I have settled on Fedora as my main distro, and I use it on my laptop and my PC.",
             "I also used to use the KDE desktop environment, but I have recently switched to GNOME. I like the simplicity of GNOME, and I like the way it looks. I also like the way it works with Fedora, and the way it integrates with the rest of the system.",
