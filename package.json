@@ -1,12 +1,12 @@
 {
   "name": "jxctno.com",
+  "packageManager": "yarn@4.1.1",
+  "version": "0.1.0",
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router": "^6.21.2",
-    "react-router-dom": "^6.21.2",
-    "react-scripts": "^5.0.1",
-    "react-slideshow-image": "^4.3.0"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.23.0",
+    "react-scripts": "^5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -25,9 +25,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "license": "MIT",
-  "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.16.7"
   }
 }

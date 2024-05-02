@@ -29,7 +29,7 @@ function TopBar() {
                 <button className="topbar-button">Home</button>
             </Link>
             {/* Computer Science */}
-            <Link to="/computerscience" className="topbar-link">
+            <Link to="/computer-science" className="topbar-link">
                 <button className="topbar-button">Computer Science</button>
             </Link>
             {/* Music */}
