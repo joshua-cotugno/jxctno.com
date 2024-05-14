@@ -3,61 +3,26 @@ Theme.css is a file that contains the CSS variables that will be used to style t
 */
 
 
+/* Variables */
 :root {
-    --mode: 0; /* 1 for light mode, 0 for dark mode */
+    --primary_bg: #1b1b27;
+    --primary_accent: #387e6e;
+    --primary_text: #f6f6f6;
+    --secondary_text: #2b2b2b;
 
-    /* CSS HEX */
-    --teal: #008080ff;
-    --onyx: #474448ff;
-    --columbia-blue: #c5d5eaff;
-    --powder-blue: #b3c5d7ff;
-    --celadon: #9ae19dff;
-
-    --darker-teal: #006666ff;
-    --darker-onyx: #3e3d3aff;
-    --darker-columbia-blue: #a3b9d1ff;
-    --darker-powder-blue: #8aa0b0ff;
-    --darker-celadon: #7dc68cff;
-
-    --lighter-teal: #00bdbdff;
-    --lighter-onyx: #5e5d58ff;
-    --lighter-columbia-blue: #d3e1eaff;
-    --lighter-powder-blue: #c1d3e0ff;
-    --lighter-celadon: #a8f2a3ff;
-
-    --primary-light: var(--teal);
-    --primary-hover-light: var(--lighter-teal);
-    --secondary-light: var(--columbia-blue);
-    --background-light: var(--powder-blue);
-    --text-dim: var(--onyx);
-    --text-bright: var(--celadon);
-    
-    --primary-dark: var(--teal);
-    --primary-hover-dark: var(--darker-teal); /* Fixed */
-    --secondary-dark: var(--columbia-blue);
-    --background-dark: var(--powder-blue);
-    --text-dim-dark: var(--onyx);
-    --text-bright-dark: var(--celadon);
+    --primary_accent__darker: #1f423a;
+    --primary_accent__lighter: #4d9987;
 }
 
-/* Media query for light mode */
-@media (prefers-color-scheme: light) {
-    :root {
-        --primary: var(--primary-light);
-        --primary-hover: var(--primary-hover-light);
-        --secondary: var(--secondary-light);
-        --background: var(--background-light);
-        --text: var(--text-dim); /* Changed from --text-dim */
-    }
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--primary_bg);
+    color: var(--primary_text);
 }
 
-/* Media query for dark mode */
-@media (prefers-color-scheme: dark) {
-    :root {
-        --primary: var(--primary-dark);
-        --primary-hover: var(--primary-hover-dark);
-        --secondary: var(--secondary-dark);
-        --background: var(--background-dark);
-        --text: var(--text-dim-dark); /* Changed from --text-dim-dark */
-    }
+a {
+    text-decoration: underline;
+    color: var(--primary_accent);
 }

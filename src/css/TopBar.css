@@ -1,36 +1,19 @@
+@import url("./theme.css");
+
 /* TopBar.css */
-
-/* Add a background based on the theme.css */
-@import url('theme.css');
-
-.topbar {
-  background-color: var(--primary);
-  padding: 10px 20px;
-  top: 0;
+.top-bar {
+    background-color: var(--primary-bg);
+    color: var(--primary-text);
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
 }
 
-.topbar-link {
-  margin-right: 20px;
+.nav-link {
+    color: var(--primary-text);
+    padding: 8px 16px;
 }
 
-.topbar-button {
-  background-color: var(--secondary);
-  border: none;
-  color: var(--text);
-  padding: 10px 20px;
-  
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  cursor: pointer;
-  transition: all 0.3s ease; /* Transition effect for all properties with 0.3s duration */
-  border-radius: 10px
-}
-
-.topbar-button:hover {
-  /* Do some maths to use the primary color as the hover color
-   */
-  background-color: var(--primary-hover);
-  color: var(--background-light);
-  transform: scale(1.1); /* Scale the button slightly on hover */
+.nav-link:hover {
+    background-color: var(--primary-accent);
 }

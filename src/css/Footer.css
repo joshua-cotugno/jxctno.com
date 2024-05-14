@@ -1,44 +1,13 @@
+@import url("./theme.css");
+
 /* Footer.css */
-
-@import url('theme.css');
-/* import them files */
-
 .footer {
-  background-color: var(--primary);
-  color: var(--text);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 80px;
-  /* Make items go onto new lines */
-  flex-wrap: wrap;
-  width: 100%;
-  position: static;
-  bottom: 0;
-}
-
-.footer p {
-  margin: 0;
-}
-
-.footer a {
-  color: var(--text);
-  text-decoration: none;
-  margin: 0 10px;
-}
-
-.footer a:hover {
-  color: var(--text);
-}
-
-.socials {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: "Arial Black", Gadget, sans-serif;
-}
-
-.socials:hover {
-  /* underline */
-  text-decoration: underline
+    padding: 10px 20px;
+    background-color: var(--footer-bg);
+    color: var(--primary-text);
+    text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }

@@ -1,19 +1,18 @@
-// Footer.js
-
 import React from 'react';
-import '../css/Footer.css'; // Import your styles for the footer
-import '../css/FontAwesome.css'; // Import your styles for the footer
+import '../css/Footer.css';
+import { Link } from 'react-router-dom';
+
+import '../css/FontAwesomeIcons.css'; // Ensure you have a CSS file for this if needed
 
 function Footer() {
-  return (
-    <footer className="footer">
-      <p>&copy; 2024 Joshua Cotugno</p>
-      <a className="socials" href="https://instagram.com/jxctno.bmp"><i className="fa fa-instagram"></i>&nbsp; @jxctno.bmp</a>
-      <a className="socials" href="mailto:jxctno@jxctno.com"><i className="fa fa-envelope"></i>&nbsp; jxctno@jxctno.com</a>
-      <a href="./credits">Credits</a>
-    </footer>
-  );
+    return (
+        <footer className="footer">
+            <p>Website created by Joshua Cotugno.</p>
+            <p>Find me on <Link to="https://www.instagram.com/jxctno.bmp/">Instagram</Link>
+            <p>Powered by <Link to="https://reactjs.org/">React</Link> and <Link to="https://aws.amazon.com/amplify/">AWS Amplify</Link>.</p>
+            <p>&copy; {new Date().getFullYear()} Joshua Cotugno. All Rights Reserved.</p>
+        </footer>
+    );
 }
 
 export default Footer;
-

@@ -1,22 +1,16 @@
-// // index.js
-
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
 import App from './App';
+import './css/theme.css'; // Adjust if necessary to match your CSS file location
 
-ReactDOM.render(
+const container = document.getElementById('root');
+const root = createRoot(container); // create a root
+
+root.render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </React.StrictMode>
 );
-
-// import { createRoot } from 'react-dom/client';
-// const container = document.getElementById('app');
-// const root = createRoot(container); // createRoot(container!) if you use TypeScript
-// root.render(
-//   <React>
-//     <App />
-//   </React>,
-//   document.getElementById('root')
-// );
