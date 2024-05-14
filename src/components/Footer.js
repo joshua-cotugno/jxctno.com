@@ -8,7 +8,7 @@ function Footer() {
     return (
         <footer className="footer">
             <p>Website created by Joshua Cotugno.</p>
-            <p>Find me on <Link to="https://www.instagram.com/jxctno.bmp/">Instagram</Link>
+            <p>Find me on <Link to="https://www.instagram.com/jxctno.bmp/">Instagram</Link></p>
             <p>Powered by <Link to="https://reactjs.org/">React</Link> and <Link to="https://aws.amazon.com/amplify/">AWS Amplify</Link>.</p>
             <p>&copy; {new Date().getFullYear()} Joshua Cotugno. All Rights Reserved.</p>
         </footer>
