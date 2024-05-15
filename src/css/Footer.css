@@ -3,11 +3,12 @@
 /* Footer.css */
 .footer {
     padding: 10px 20px;
-    background-color: var(--footer-bg);
-    color: var(--primary-text);
+    background-color: var(--primary_accent__darker);
+    color: var(--primary_text);
     text-align: center;
-    position: fixed;
+    position: relative;
     left: 0;
     bottom: 0;
     width: 100%;
+
 }

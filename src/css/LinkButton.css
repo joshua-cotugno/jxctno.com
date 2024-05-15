@@ -20,6 +20,7 @@
 .link-button-text {
     color: var(--primary_text);
     display: inline;
+    text-decoration: none;
 
 }
 
