@@ -1,4 +1,5 @@
 import React from 'react';
+<<<<<<< HEAD
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
@@ -15,3 +16,20 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+=======
+import { createRoot } from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
+import App from './App';
+import './css/theme.css'; // Adjust if necessary to match your CSS file location
+
+const container = document.getElementById('root');
+const root = createRoot(container); // create a root
+
+root.render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </React.StrictMode>
+);
+>>>>>>> 1a419146958dad13627aa2b077f3eceb438bd90a

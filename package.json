@@ -1,5 +1,6 @@
 {
   "name": "jxctno.com",
+<<<<<<< HEAD
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -35,4 +36,7 @@
       "last 1 safari version"
     ]
   }
+=======
+  "packageManager": "yarn@4.1.1"
+>>>>>>> 1a419146958dad13627aa2b077f3eceb438bd90a
 }
