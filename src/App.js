@@ -1,26 +1,25 @@
-// App.js
+import logo from './logo.svg';
+import './App.css';
 
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from './views/Home';
-import Music from './views/Music';
-import ComputerScience from './views/ComputerScience';
-import Other from './views/Other';
-import Credits from './views/Credits';
-
-const App = () => {
+function App() {
   return (
-    <Router>
-      <Routes>
-        {/* Define routes for Home and Music */}
-        <Route path="/" element={<Home />} />
-        <Route path="/music" element={<Music />} />
-        <Route path="/computer-science" element={<ComputerScience />} />
-        <Route path="/other" element={<Other />} />
-        <Route path="/credits" element={<Credits />} />
-      </Routes>
-    </Router>
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
   );
-};
+}
 
 export default App;
