@@ -1,0 +1,25 @@
+/* Links Component Styles */
+.link-button {
+    display: block;
+    margin: 10px auto;
+    padding: 12px;
+    background-color: var(--link-bg-color);
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    width: 90%;
+    max-width: 250px;
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+    text-align: center;
+  }
+  
+  .link-button:hover {
+    background-color: var(--link-hover-bg-color);
+    transform: scale(1.05);
+  }
+  
+  .link-button:active {
+    transform: scale(0.98);
+  }
+  
