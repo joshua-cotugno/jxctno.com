@@ -1,0 +1,83 @@
+/* Global Styles - Mobile Optimised */
+:root {
+  --main-bg-color: #1a1a1a;
+  --text-color: white;
+  --secondary-text-color: #aaa;
+  --link-bg-color: #6a0dad;
+  --link-hover-bg-color: #530a9a;
+  --footer-text-color: #888;
+}
+
+body {
+  background-color: var(--main-bg-color);
+  color: var(--text-color);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 90%;
+  width: 600px;
+  margin: auto;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 1.2em;
+  color: var(--secondary-text-color);
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1em;
+  line-height: 1.6;
+  color: var(--secondary-text-color);
+}
+
+a {
+  display: block;
+  margin: 10px auto;
+  padding: 12px;
+  background-color: var(--link-bg-color);
+  color: var(--text-color);
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.1em;
+  width: 90%;
+  max-width: 250px;
+  transition: background 0.3s ease-in-out;
+}
+
+a:hover {
+  background-color: var(--link-hover-bg-color);
+}
+
+footer {
+  margin-top: 20px;
+  font-size: 0.9em;
+  color: var(--footer-text-color);
+}
+
+@media (min-width: 600px) {
+  h1 {
+    font-size: 2.5em;
+  }
+  h2 {
+    font-size: 1.5em;
+  }
+  .container {
+    max-width: 600px;
+  }
+}

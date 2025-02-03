@@ -1,0 +1,24 @@
+/* Logo Component Styles - Mobile Optimised */
+.logo-container {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.logo-container img {
+  width: 100px;
+  height: 100px;
+  max-width: 200px;
+  border-radius: 50%; /* Ensures the logo is always round */
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: 4px solid white; /* Adds a 4px white outline */
+}
+
+@media (min-width: 600px) {
+  .logo-container img {
+    width: 150px;
+    height: 150px;
+    max-width: 250px;
+  }
+}
