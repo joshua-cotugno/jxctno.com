@@ -19,7 +19,7 @@ const Links = () => {
     { icon: "fab fa-youtube", destination: "https://youtube.com/@PurplePropaganda", label: "YouTube" },
     { icon: "fab fa-instagram", destination: "https://instagram.com/purple.propaganda", label: "Instagram" },
     { icon: "fab fa-tiktok", destination: "https://tiktok.com/@purple.propaganda", label: "TikTok" },
-    { icon: "fab fa-soundcloud", destination: "https://soundcloud.com/", label: "SoundCloud (COMING SOON)" }
+    { icon: "fab fa-soundcloud", destination: "https://soundcloud.com/purple-propaganda", label: "SoundCloud" }
   ];
 
   return (

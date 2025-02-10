@@ -1,7 +1,7 @@
 import React from "react";
-import Logo from "../components/Logo";
 import Header from "../components/Header";
 import Links from "../components/Links";
+import Release from "../components/Releases";
 
 const PurplePropaganda = () => {
   return (
